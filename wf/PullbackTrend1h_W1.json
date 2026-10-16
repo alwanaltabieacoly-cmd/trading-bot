@@ -1,0 +1,33 @@
+{
+  "strategy_name": "PullbackTrend1h",
+  "params": {
+    "roi": {
+      "0": 0.08,
+      "480": 0.04,
+      "1440": 0.015
+    },
+    "stoploss": {
+      "stoploss": -0.05
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 2
+    },
+    "buy": {
+      "adx4h_min": 29,
+      "atr_pct_max": 0.049,
+      "rsi_buy": 38
+    },
+    "sell": {
+      "atr_mult": 2.9,
+      "rsi_sell": 73
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-10-16 21:44:06.309718+00:00"
+}

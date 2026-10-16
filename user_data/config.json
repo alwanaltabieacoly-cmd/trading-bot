@@ -21,7 +21,10 @@
                      "secret":  "",
                      "pair_whitelist":  [
                                             "BTC/USDT",
-                                            "ETH/USDT"
+                                            "ETH/USDT",
+                                            "SOL/USDT",
+                                            "BNB/USDT",
+                                            "XRP/USDT"
                                         ]
                  },
     "timeframe":  "15m",
