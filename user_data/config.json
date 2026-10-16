@@ -8,7 +8,6 @@
     "trading_mode":  "spot",
     "bot_name":  "trading-bot",
     "stake_amount":  10,
-    "stoploss":  -0.05,
     "dry_run_wallet":  100,
     "tradable_balance_ratio":  0.99,
     "max_open_trades":  2,

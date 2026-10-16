@@ -1,0 +1,36 @@
+{
+  "strategy_name": "TrendAdx1hRegime",
+  "params": {
+    "roi": {
+      "0": 0.15,
+      "720": 0.06,
+      "1440": 0.02
+    },
+    "stoploss": {
+      "stoploss": -0.08
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 2
+    },
+    "buy": {
+      "adx_min": 15,
+      "atr_pct_max": 0.034,
+      "btc_adx_bear": 33,
+      "rsi_high": 78,
+      "rsi_low": 48,
+      "use_btc_adx": true
+    },
+    "sell": {
+      "atr_mult": 3.4,
+      "rsi_exit": 70
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-10-16 22:23:50.393573+00:00"
+}
