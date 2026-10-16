@@ -1,0 +1,49 @@
+{
+    "unfilledtimeout":  {
+                            "entry":  10,
+                            "unit":  "minutes",
+                            "exit":  10
+                        },
+    "initial_state":  "running",
+    "trading_mode":  "spot",
+    "bot_name":  "trading-bot",
+    "stake_amount":  10,
+    "stoploss":  -0.05,
+    "dry_run_wallet":  100,
+    "tradable_balance_ratio":  0.99,
+    "max_open_trades":  2,
+    "exchange":  {
+                     "key":  "",
+                     "name":  "bybit",
+                     "pair_blacklist":  [
+
+                                        ],
+                     "secret":  "",
+                     "pair_whitelist":  [
+                                            "BTC/USDT",
+                                            "ETH/USDT"
+                                        ]
+                 },
+    "timeframe":  "15m",
+    "stake_currency":  "USDT",
+    "dry_run":  true,
+    "exit_pricing":  {
+                         "order_book_top":  1,
+                         "price_side":  "same",
+                         "use_order_book":  true
+                     },
+    "internals":  {
+                      "process_throttle_secs":  5
+                  },
+    "entry_pricing":  {
+                          "order_book_top":  1,
+                          "price_side":  "same",
+                          "use_order_book":  true
+                      },
+    "pairlists":  [
+                      {
+                          "method":  "StaticPairList"
+                      }
+                  ],
+    "cancel_open_orders_on_exit":  false
+}

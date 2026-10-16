@@ -1,0 +1,5 @@
+user_data/data/
+user_data/logs/
+*.sqlite
+.venv/
+config.private.json
