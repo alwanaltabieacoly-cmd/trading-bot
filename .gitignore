@@ -10,3 +10,5 @@ user_data/decisions/
 reports/decisions/_prompts/
 *.log
 __pycache__/
+*.sqlite-shm
+*.sqlite-wal
