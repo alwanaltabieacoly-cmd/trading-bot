@@ -17,3 +17,25 @@ Walk-forward (train->test profit): TrendAdx1h W1 +1.34->-1.16, W2 +1.43->-0.88, 
 - TrendAdx1hRegime (BTC 1d close>EMA200 + BTC 4h ADX/DI bear filter): IS 34 trades, 61.8%, +2.10%; OOS 11 trades, 45.5%, -0.70%, maxDD 1.09%, Sharpe -0.13, market -18.76%. WF test: -4.68%, -1.56%, +0.08% (1/3).
 - FreqaiLgbmRegime (LightGBMRegressor fwd return 12 candles, train 90d/retrain 7d, BTC/ETH/SOL): OOS 20250701-20261015 207 trades, 60.4%, -3.35%, maxDD 8.27%, Sharpe -0.44, market -19.82%. Untuned thresholds.
 - Verdict: no validated edge; outperformance vs market comes from sitting in cash.
+## Stage 4 (commit 67328f0)
+| Strategy | Window | Trades | Win% | Profit | MaxDD | Sharpe | Market |
+|---|---|---|---|---|---|---|---|
+| BtcEma200Hold (BTC only, 1d) | IS 2024-01..2025-06 | 17 | 17.6% | +5.59% | 2.23% | 0.12 | +142.53% |
+| BtcEma200Hold | OOS 2025-07.. | 6 | 33.3% | +0.60% | 0.77% | 0.05 | -22.19% |
+| FreqaiClfRegime (entry_prob 0.76) | IS | 1186 | 64.2% | -27.17% | 32.54% | -3.32 | +71.77% |
+| FreqaiClfRegime | OOS ..2026-10-15 | 333 | 62.8% | -4.76% | 6.39% | -0.79 | -19.82% |
+- Lookahead-analysis on FreqaiClfRegime: 0 biased entries/exits of 20 signals.
+- Paper bots (dry-run): A TrendEmaRsi :8081, B TrendAdx1hRegimeVeto :8082 (agent veto), C BtcEma200Hold :8083.
+- Sentiment collector: F&G OK; GDELT 429 rate-limited; Reddit 403 blocked.
+
+## Stage 5 - NostalgiaForInfinityX8 (commit 4cd1046 of NFI), OOS 2025-07-01..2026-10-15, 5 pairs, 2 slots
+- 5 trades, 4 wins, +1.12%, maxDD 1.46%, market -17.51%. Crippled by our 5-pair/2-slot setup (grind slots limit); stoploss -0.99 + DCA breaks our risk rules. Benchmark only.
+
+## Stage 6
+| Strategy | Window | Trades | Win% | Profit | MaxDD | Sharpe | Market |
+|---|---|---|---|---|---|---|---|
+| EmaTrendBreakout (EMA600 + 48h breakout, round params) | 2022 held-out | 159 | 35.8% | -13.11% | 14.54% | -2.23 | -54.51% |
+| EmaTrendBreakout | IS 2024-01..2025-06 | 370 | n/a | -8.07% | 10.89% | -0.79 | +116.22% |
+| EmaTrendBreakout | OOS 2025-07.. | 225 | 40.0% | -0.03% | 5.60% | -0.00 | -18.38% |
+| EmaTrendBreakout on 1m, BTC+ETH | 2026-09-15..10-15 | 547 | 11.0% | -11.89% | 11.92% | -207.44 | +0.37% |
+| FreqaiExampleSpot (stock example, long only) | OOS ..2026-10-15 | 1524 | 42.0% | -50.75% | 51.44% | -12.94 | -19.82% |

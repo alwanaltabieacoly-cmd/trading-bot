@@ -86,3 +86,6 @@
 ## 2026-10-17 03:35 - Stage 6b: FreqaiExampleSpot (stock FreqaiExampleStrategy, can_short=False, 1h, LightGBMRegressor, config_freqai_example.json BTC/ETH/SOL, train 90d / retrain 7d)
 - OOS 20250701-20261015: 1524 trades (3.24/day), -50.75%, max underwater 51.44%, Sharpe -12.94, market -19.82%. Untuned example strategy loses heavily (fees + noisy signals).
 - 2022 held-out run (20220415-20221231) started next in the same background job (fex_22.log).
+## 2026-10-17 04:01 - INTERRUPTION
+- Session interrupted while polling the LLM replay; replay (PID 9396) and FreqaiExampleSpot 2022 run continued in background. Stage 4-6 table appended to STAGES.md.
+
