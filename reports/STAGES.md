@@ -39,3 +39,16 @@ Walk-forward (train->test profit): TrendAdx1h W1 +1.34->-1.16, W2 +1.43->-0.88, 
 | EmaTrendBreakout | OOS 2025-07.. | 225 | 40.0% | -0.03% | 5.60% | -0.00 | -18.38% |
 | EmaTrendBreakout on 1m, BTC+ETH | 2026-09-15..10-15 | 547 | 11.0% | -11.89% | 11.92% | -207.44 | +0.37% |
 | FreqaiExampleSpot (stock example, long only) | OOS ..2026-10-15 | 1524 | 42.0% | -50.75% | 51.44% | -12.94 | -19.82% || FreqaiExampleSpot | 2022 held-out (04-15..12-31) | 1847 | see PROGRESS | -59.96% | 62.01% | -19.03 | -69.58% |
+
+## Stage 7 - Multi-agent veto (agents/, design in ARCHITECTURE.md)
+- 4 deterministic agents (market multi-TF 1m..1d + order book, news F&G/GDELT/Reddit, session stats, risk) + LLM decision maker (OpenCode deepseek-v4.1-flash-free, fallback glm-5.3-flash-free, fallback deterministic rule). Up to 2 follow-up rounds.
+- Wired into paper bot B (TrendAdx1hRegimeVeto) as a fail-closed veto via user_data/decisions/latest.json; cycle every 4h (Scheduled Task AgentsCycle). LLM never places orders.
+- Historical replay, ANONYMIZED prompts (no pair names, dates, weekday, absolute prices; leak-audited), 23 dates every 21 days 2025-07-07..2026-10-05 (all source=llm, 0 fallbacks), vs deterministic rule on 66 weekly dates. Forward returns from 1h candles (agents/evaluate_replay.py, reports/REPLAY_RESULTS.md):
+
+| source | decisions (allow/block) | mean 24h allowed / blocked / always | mean 7d allowed / blocked / always | 7d hit rate allowed / blocked / always |
+|---|---|---|---|---|
+| LLM (anonymized) | 115 (38/77) | -0.18% / +0.37% / +0.19% | +2.33% / +0.48% / +1.09% | 0.605 / 0.571 / 0.583 |
+| Rule (1h+4h bull) | 330 (96/234) | -0.14% / +0.39% / +0.24% | -0.26% / +0.16% / +0.04% | 0.417 / 0.474 / 0.458 |
+
+- Interpretation: LLM-allowed decisions had better 7d but worse 24h returns than blocked ones. Only 23 dates and 5 highly correlated pairs (effectively ~23 independent samples): NOT statistically meaningful. The simple rule filter showed no value.
+- Caveats: (1) LLM memorization/look-ahead: anonymization removes names/dates/prices but Fear&Greed and GDELT values can still hint at a period; the model's knowledge cutoff is unknown, so 2025-2026 dates may be inside its training data. (2) Replay ignores risk-agent account data and live order book. (3) Decisions are not costed as trades. Forward paper trading on bot B is the only clean test.

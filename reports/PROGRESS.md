@@ -92,3 +92,6 @@
 ## 2026-10-17 04:06 - FreqaiExampleSpot 2022 held-out (20220415-20221231)
 - 1847 trades (7.1/day), -59.96%, max underwater 62.01%, Sharpe -19.03, market -69.58%. TOTAL row: |    TOTAL |   1847 |     -0.32 |   -59.959 |    -59.96 |  3:47:00 |       736 |
 
+## 2026-10-17 04:18 - Agent replay finished
+- 23 anonymized LLM decisions (0 fallbacks), 66 rule decisions. `python -m agents.evaluate_replay` -> reports/REPLAY_RESULTS.md. LLM 7d: allowed +2.33% vs blocked +0.48% vs always +1.09%; 24h: allowed -0.18% vs blocked +0.37%. Rule: no value. Not significant (23 dates). Stage 7 summary + caveats added to STAGES.md.
+
