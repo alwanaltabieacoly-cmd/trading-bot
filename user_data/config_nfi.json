@@ -1,0 +1,1 @@
+{ "timeframe": "5m", "use_exit_signal": true, "exit_profit_only": false, "ignore_roi_if_entry_signal": true, "pairlists": [{"method": "StaticPairList"}] }

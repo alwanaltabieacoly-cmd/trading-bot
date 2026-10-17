@@ -3,3 +3,10 @@ user_data/logs/
 *.sqlite
 .venv/
 config.private.json
+user_data/models/
+user_data/backtest_results/
+user_data/hyperopt_results/
+user_data/decisions/
+reports/decisions/_prompts/
+*.log
+__pycache__/
