@@ -1,0 +1,10 @@
+# Spec for OpenCode: anonymized replay + evaluation
+1. Add option anonymize: bool = False to agents/decision_agent.decide(...) and flag --anonymize to agents/run_cycle.py. When anonymize is True, the prompt sent to the LLM must contain NO pair names, NO dates/timestamps/years/weekday names, and NO absolute prices or volumes:
+   - map pairs to "ASSET_1".."ASSET_n" (random order, seeded by hash of asof) and map the LLM answer back to real pairs;
+   - market features: drop close/ema absolute values; keep only ratios: (close/ema50-1), (close/ema200-1), (ema50/ema200-1), ema50 slope %, distance to 20-bar high/low %, atr_pct, volume z, regime label; drop order book absolute depths (keep spread_pct only);
+   - news: keep fng value and 7d change, gdelt tone numbers; drop reddit titles; rename BTC-regime as "reference asset regime";
+   - session: drop the current weekday; keep only current session name and the session stats.
+   - The saved record must include the anonymized prompt and the mapping.
+2. Create agents/replay.py: CLI --start YYYY-MM-DD --end YYYY-MM-DD --every-days N --anonymize --no-llm. For each asof date (00:00 UTC) calls decide(pairs, asof, use_llm=not no_llm, anonymize=...) (no api_url, no live orderbook) and writes reports/decisions/replay/<asof>_<llm|rule>.json. Skip asof dates whose output file already exists (resumable).
+3. Create agents/evaluate_replay.py: reads reports/decisions/replay/*.json, and for each pair decision computes the forward return of the pair from 1h candles (agents.common.load_candles with asof far in future) over 24h and 7d from asof. Prints and writes reports/REPLAY_RESULTS.md: per source (llm vs rule), counts of allow/block, mean and median forward 24h and 7d return of allowed vs blocked decisions, hit rate (allowed with positive 7d return), and the same for an "always allow" baseline. Keep it pandas-only.
+Do not modify files other than agents/decision_agent.py, agents/run_cycle.py and the two new files. Do not run anything.

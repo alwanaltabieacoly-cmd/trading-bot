@@ -77,3 +77,12 @@
 - status.ps1: A 0 trades; B 0 trades (veto blocking); C 1 open BTC/USDT -0.31%.
 - Collector scheduled run 03:10: fng stored.
 - FreqaiExampleSpot (Stage 6b) backtests running in background (fex_oos.log, fex_22.log).
+## 2026-10-17 03:11-03:28 - Agent historical replay (anonymized)
+- reports/REPLAY_SPEC.md; OpenCode (~5.5 min) added --anonymize to decision_agent/run_cycle, agents/replay.py, agents/evaluate_replay.py.
+- Leak audit of anonymized prompt (2026-09-28): 0 matches for BTC/ETH/SOL/BNB/XRP, weekday names, absolute close/ema fields; 'USDT' only in the generic system line; '202x' matches were digits inside feature values. Remaining weak leak: Fear&Greed value/tone could hint at a period.
+- Rule (no-LLM) replay: 66 weekly dates 2025-07-07..2026-10-05 written.
+- LLM anonymized replay test 2026-09-28: source=llm, model deepseek-v4.1-flash-free, ~5 min.
+- Launched detached LLM replay every 21 days 2025-07-07..2026-10-05, PID 9396, log reports/decisions/replay_llm.out (resumable).
+## 2026-10-17 03:35 - Stage 6b: FreqaiExampleSpot (stock FreqaiExampleStrategy, can_short=False, 1h, LightGBMRegressor, config_freqai_example.json BTC/ETH/SOL, train 90d / retrain 7d)
+- OOS 20250701-20261015: 1524 trades (3.24/day), -50.75%, max underwater 51.44%, Sharpe -12.94, market -19.82%. Untuned example strategy loses heavily (fees + noisy signals).
+- 2022 held-out run (20220415-20221231) started next in the same background job (fex_22.log).

@@ -1,0 +1,717 @@
+{
+  "asof": "2026-04-13T00:00:00+00:00",
+  "generated_at": "2026-10-17T01:18:44.133952+00:00",
+  "pairs": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "BNB/USDT",
+    "XRP/USDT"
+  ],
+  "live_orderbook": false,
+  "use_llm": false,
+  "anonymize": false,
+  "inputs": {
+    "market": {
+      "asof": "2026-04-13T00:00:00+00:00",
+      "live_orderbook": false,
+      "pairs": {
+        "BTC/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 70742.7,
+              "ema50": 70903.480997,
+              "ema200": 71240.851323,
+              "ema50_slope": -0.067145,
+              "dist_to_high20_pct": -0.266875,
+              "dist_to_low20_pct": 0.337993,
+              "atr_pct_14": 0.184673,
+              "volume_z_48": -0.446899,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 70742.7,
+              "ema50": 71126.979085,
+              "ema200": 71810.914752,
+              "ema50_slope": -0.120018,
+              "dist_to_high20_pct": -0.996713,
+              "dist_to_low20_pct": 0.337993,
+              "atr_pct_14": 0.380473,
+              "volume_z_48": -0.125758,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 70742.7,
+              "ema50": 71802.487784,
+              "ema200": 70818.619415,
+              "ema50_slope": -0.22298,
+              "dist_to_high20_pct": -1.455269,
+              "dist_to_low20_pct": 0.337993,
+              "atr_pct_14": 0.477949,
+              "volume_z_48": 0.45926,
+              "regime": "range"
+            },
+            "4h": {
+              "available": true,
+              "close": 70742.7,
+              "ema50": 70816.346406,
+              "ema200": 69850.830006,
+              "ema50_slope": 0.1058,
+              "dist_to_high20_pct": -4.154501,
+              "dist_to_low20_pct": 0.337993,
+              "atr_pct_14": 0.992278,
+              "volume_z_48": -0.104367,
+              "regime": "bull"
+            },
+            "1d": {
+              "available": true,
+              "close": 70742.7,
+              "ema50": 70732.896397,
+              "ema200": 83415.414034,
+              "ema50_slope": 0.374687,
+              "dist_to_high20_pct": -4.154501,
+              "dist_to_low20_pct": 8.870934,
+              "atr_pct_14": 3.238275,
+              "volume_z_48": -0.805578,
+              "regime": "bear"
+            }
+          }
+        },
+        "ETH/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 2191.59,
+              "ema50": 2196.210238,
+              "ema200": 2204.475665,
+              "ema50_slope": -0.062915,
+              "dist_to_high20_pct": -0.451504,
+              "dist_to_low20_pct": 0.38154,
+              "atr_pct_14": 0.231306,
+              "volume_z_48": -0.595822,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 2191.59,
+              "ema50": 2201.244246,
+              "ema200": 2219.865372,
+              "ema50_slope": -0.089046,
+              "dist_to_high20_pct": -1.207193,
+              "dist_to_low20_pct": 0.38154,
+              "atr_pct_14": 0.508926,
+              "volume_z_48": -0.962634,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 2191.59,
+              "ema50": 2219.616314,
+              "ema200": 2181.502461,
+              "ema50_slope": -0.170829,
+              "dist_to_high20_pct": -1.316181,
+              "dist_to_low20_pct": 0.766928,
+              "atr_pct_14": 0.71279,
+              "volume_z_48": -0.592492,
+              "regime": "bull"
+            },
+            "4h": {
+              "available": true,
+              "close": 2191.59,
+              "ema50": 2182.019248,
+              "ema200": 2130.818199,
+              "ema50_slope": 0.175095,
+              "dist_to_high20_pct": -5.925001,
+              "dist_to_low20_pct": 0.766928,
+              "atr_pct_14": 1.524171,
+              "volume_z_48": -0.602816,
+              "regime": "bull"
+            },
+            "1d": {
+              "available": true,
+              "close": 2191.59,
+              "ema50": 2162.094708,
+              "ema200": 2671.697919,
+              "ema50_slope": 0.608464,
+              "dist_to_high20_pct": -5.925001,
+              "dist_to_low20_pct": 13.085139,
+              "atr_pct_14": 4.592035,
+              "volume_z_48": -0.830945,
+              "regime": "bear"
+            }
+          }
+        },
+        "SOL/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 81.53,
+              "ema50": 81.926745,
+              "ema200": 82.252734,
+              "ema50_slope": -0.114412,
+              "dist_to_high20_pct": -0.63376,
+              "dist_to_low20_pct": 0.295239,
+              "atr_pct_14": 0.247061,
+              "volume_z_48": -0.399806,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 81.53,
+              "ema50": 82.128856,
+              "ema200": 83.044473,
+              "ema50_slope": -0.13824,
+              "dist_to_high20_pct": -1.640729,
+              "dist_to_low20_pct": 0.295239,
+              "atr_pct_14": 0.550192,
+              "volume_z_48": -0.348834,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 81.53,
+              "ema50": 83.031426,
+              "ema200": 82.877764,
+              "ema50_slope": -0.226388,
+              "dist_to_high20_pct": -1.640729,
+              "dist_to_low20_pct": 0.295239,
+              "atr_pct_14": 0.727164,
+              "volume_z_48": 0.19994,
+              "regime": "range"
+            },
+            "4h": {
+              "available": true,
+              "close": 81.53,
+              "ema50": 82.856405,
+              "ema200": 84.980224,
+              "ema50_slope": -0.252237,
+              "dist_to_high20_pct": -5.483422,
+              "dist_to_low20_pct": 0.295239,
+              "atr_pct_14": 1.466594,
+              "volume_z_48": 0.421594,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 81.53,
+              "ema50": 87.63885,
+              "ema200": 119.889319,
+              "ema50_slope": -1.052123,
+              "dist_to_high20_pct": -12.802139,
+              "dist_to_low20_pct": 6.283405,
+              "atr_pct_14": 4.95786,
+              "volume_z_48": -1.347522,
+              "regime": "bear"
+            }
+          }
+        },
+        "BNB/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 592.1,
+              "ema50": 592.795483,
+              "ema200": 594.042521,
+              "ema50_slope": -0.0367,
+              "dist_to_high20_pct": -0.303081,
+              "dist_to_low20_pct": 0.20308,
+              "atr_pct_14": 0.127874,
+              "volume_z_48": -0.531813,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 592.1,
+              "ema50": 593.444666,
+              "ema200": 598.703135,
+              "ema50_slope": -0.036945,
+              "dist_to_high20_pct": -0.804155,
+              "dist_to_low20_pct": 0.20308,
+              "atr_pct_14": 0.304003,
+              "volume_z_48": -0.574228,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 592.1,
+              "ema50": 598.62816,
+              "ema200": 602.268406,
+              "ema50_slope": -0.178931,
+              "dist_to_high20_pct": -0.804155,
+              "dist_to_low20_pct": 0.526316,
+              "atr_pct_14": 0.437909,
+              "volume_z_48": -0.551581,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 592.1,
+              "ema50": 602.15133,
+              "ema200": 619.914703,
+              "ema50_slope": -0.333843,
+              "dist_to_high20_pct": -3.582478,
+              "dist_to_low20_pct": 0.526316,
+              "atr_pct_14": 0.953024,
+              "volume_z_48": -0.129672,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 592.1,
+              "ema50": 636.398374,
+              "ema200": 753.365933,
+              "ema50_slope": -1.191569,
+              "dist_to_high20_pct": -9.34007,
+              "dist_to_low20_pct": 3.804348,
+              "atr_pct_14": 3.065843,
+              "volume_z_48": 0.287771,
+              "regime": "bear"
+            }
+          }
+        },
+        "XRP/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 1.3246,
+              "ema50": 1.328563,
+              "ema200": 1.331263,
+              "ema50_slope": -0.072139,
+              "dist_to_high20_pct": -0.435959,
+              "dist_to_low20_pct": 0.15879,
+              "atr_pct_14": 0.174177,
+              "volume_z_48": -0.524444,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 1.3246,
+              "ema50": 1.330376,
+              "ema200": 1.338537,
+              "ema50_slope": -0.081462,
+              "dist_to_high20_pct": -1.112355,
+              "dist_to_low20_pct": 0.15879,
+              "atr_pct_14": 0.340264,
+              "volume_z_48": -0.536487,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 1.3246,
+              "ema50": 1.338304,
+              "ema200": 1.339859,
+              "ema50_slope": -0.118286,
+              "dist_to_high20_pct": -1.112355,
+              "dist_to_low20_pct": 0.401728,
+              "atr_pct_14": 0.473998,
+              "volume_z_48": -0.525656,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 1.3246,
+              "ema50": 1.339557,
+              "ema200": 1.371643,
+              "ema50_slope": -0.185415,
+              "dist_to_high20_pct": -3.67246,
+              "dist_to_low20_pct": 0.401728,
+              "atr_pct_14": 1.068247,
+              "volume_z_48": -0.769919,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 1.3246,
+              "ema50": 1.4098,
+              "ema200": 1.820857,
+              "ema50_slope": -1.021701,
+              "dist_to_high20_pct": -7.892358,
+              "dist_to_low20_pct": 3.630105,
+              "atr_pct_14": 3.55633,
+              "volume_z_48": -0.809543,
+              "regime": "bear"
+            }
+          }
+        }
+      }
+    },
+    "news": {
+      "asof": "2026-04-13T00:00:00+00:00",
+      "fng": {
+        "value": 16,
+        "classification": "Extreme Fear",
+        "date": "2026-04-12",
+        "source": "csv"
+      },
+      "fng_7d_change": 4,
+      "gdelt": {},
+      "reddit": null
+    },
+    "session": {
+      "asof": "2026-04-13T00:00:00+00:00",
+      "current_weekday": "Monday",
+      "current_session": [
+        "asia"
+      ],
+      "pairs": {
+        "BTC/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.05278,
+              "mean_abs_return": 0.437378,
+              "n": 288
+            },
+            "Tuesday": {
+              "mean_return": -0.003814,
+              "mean_abs_return": 0.441169,
+              "n": 311
+            },
+            "Wednesday": {
+              "mean_return": 0.013279,
+              "mean_abs_return": 0.418536,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": -0.09818,
+              "mean_abs_return": 0.402462,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.032009,
+              "mean_abs_return": 0.38835,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.027897,
+              "mean_abs_return": 0.256429,
+              "n": 312
+            },
+            "Sunday": {
+              "mean_return": -0.035746,
+              "mean_abs_return": 0.29626,
+              "n": 312
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": -0.01253,
+              "mean_abs_return": 0.338207,
+              "n": 719
+            },
+            "london": {
+              "mean_return": 0.006084,
+              "mean_abs_return": 0.38921,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.008136,
+              "mean_abs_return": 0.464898,
+              "n": 720
+            }
+          }
+        },
+        "ETH/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.08284,
+              "mean_abs_return": 0.562583,
+              "n": 288
+            },
+            "Tuesday": {
+              "mean_return": 0.006762,
+              "mean_abs_return": 0.567043,
+              "n": 311
+            },
+            "Wednesday": {
+              "mean_return": 0.019582,
+              "mean_abs_return": 0.538506,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": -0.124982,
+              "mean_abs_return": 0.511319,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.015834,
+              "mean_abs_return": 0.479679,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.015239,
+              "mean_abs_return": 0.326256,
+              "n": 312
+            },
+            "Sunday": {
+              "mean_return": -0.071393,
+              "mean_abs_return": 0.430857,
+              "n": 312
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": -0.020376,
+              "mean_abs_return": 0.41683,
+              "n": 719
+            },
+            "london": {
+              "mean_return": -0.010069,
+              "mean_abs_return": 0.498607,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.000449,
+              "mean_abs_return": 0.604808,
+              "n": 720
+            }
+          }
+        },
+        "SOL/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.057151,
+              "mean_abs_return": 0.55906,
+              "n": 288
+            },
+            "Tuesday": {
+              "mean_return": -0.009561,
+              "mean_abs_return": 0.553265,
+              "n": 311
+            },
+            "Wednesday": {
+              "mean_return": -0.016939,
+              "mean_abs_return": 0.578604,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": -0.124281,
+              "mean_abs_return": 0.537387,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.049266,
+              "mean_abs_return": 0.54411,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.025872,
+              "mean_abs_return": 0.393314,
+              "n": 312
+            },
+            "Sunday": {
+              "mean_return": -0.076021,
+              "mean_abs_return": 0.464951,
+              "n": 312
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": -0.020435,
+              "mean_abs_return": 0.468672,
+              "n": 719
+            },
+            "london": {
+              "mean_return": -0.02191,
+              "mean_abs_return": 0.525137,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.008181,
+              "mean_abs_return": 0.62254,
+              "n": 720
+            }
+          }
+        },
+        "BNB/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.039919,
+              "mean_abs_return": 0.410805,
+              "n": 288
+            },
+            "Tuesday": {
+              "mean_return": -0.01027,
+              "mean_abs_return": 0.40435,
+              "n": 311
+            },
+            "Wednesday": {
+              "mean_return": -0.009115,
+              "mean_abs_return": 0.393231,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": -0.090775,
+              "mean_abs_return": 0.383496,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.021061,
+              "mean_abs_return": 0.346689,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.030374,
+              "mean_abs_return": 0.26536,
+              "n": 312
+            },
+            "Sunday": {
+              "mean_return": -0.044145,
+              "mean_abs_return": 0.314676,
+              "n": 312
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": -0.021794,
+              "mean_abs_return": 0.332692,
+              "n": 719
+            },
+            "london": {
+              "mean_return": -0.01942,
+              "mean_abs_return": 0.375771,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.005465,
+              "mean_abs_return": 0.416092,
+              "n": 720
+            }
+          }
+        },
+        "XRP/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.061253,
+              "mean_abs_return": 0.540057,
+              "n": 288
+            },
+            "Tuesday": {
+              "mean_return": -0.007946,
+              "mean_abs_return": 0.502504,
+              "n": 311
+            },
+            "Wednesday": {
+              "mean_return": -0.00795,
+              "mean_abs_return": 0.512538,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": -0.138739,
+              "mean_abs_return": 0.514355,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.0406,
+              "mean_abs_return": 0.484492,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.006681,
+              "mean_abs_return": 0.365478,
+              "n": 312
+            },
+            "Sunday": {
+              "mean_return": -0.058736,
+              "mean_abs_return": 0.455873,
+              "n": 312
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": -0.015388,
+              "mean_abs_return": 0.423462,
+              "n": 719
+            },
+            "london": {
+              "mean_return": -0.005943,
+              "mean_abs_return": 0.514986,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.013516,
+              "mean_abs_return": 0.572817,
+              "n": 720
+            }
+          }
+        }
+      }
+    },
+    "risk": {
+      "asof": "2026-04-13T00:00:00+00:00",
+      "btc": {
+        "available": true,
+        "close": 70742.7,
+        "ema200": 83415.414034,
+        "below_ema200": true
+      },
+      "account": null,
+      "drawdown": null,
+      "size_cap": 0.5,
+      "reasons": [
+        "BTC below EMA200"
+      ]
+    }
+  },
+  "prompts": [],
+  "raw": [],
+  "model": null,
+  "decision": {
+    "source": "fallback",
+    "followups": [],
+    "pairs": {
+      "BTC/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.5,
+        "rationale": "fallback rule: 1h regime=range, 4h regime=bull, size_cap=0.5"
+      },
+      "ETH/USDT": {
+        "action": "allow",
+        "size": 0.5,
+        "confidence": 0.5,
+        "rationale": "fallback rule: 1h and 4h regime bull"
+      },
+      "SOL/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.5,
+        "rationale": "fallback rule: 1h regime=range, 4h regime=bear, size_cap=0.5"
+      },
+      "BNB/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.5,
+        "rationale": "fallback rule: 1h regime=bear, 4h regime=bear, size_cap=0.5"
+      },
+      "XRP/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.5,
+        "rationale": "fallback rule: 1h regime=bear, 4h regime=bear, size_cap=0.5"
+      }
+    }
+  }
+}

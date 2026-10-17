@@ -23,13 +23,14 @@ def parse_pairs(value):
     return [part.strip() for part in raw.split(",") if part.strip()]
 
 
-def build_record(decision, pairs, use_llm, live_orderbook, generated_at):
-    return {
+def build_record(decision, pairs, use_llm, live_orderbook, generated_at, anonymize=False):
+    record = {
         "asof": decision["asof"],
         "generated_at": generated_at,
         "pairs": list(pairs),
         "live_orderbook": bool(live_orderbook),
         "use_llm": bool(use_llm),
+        "anonymize": bool(anonymize),
         "inputs": decision["reports"],
         "prompts": decision["prompts"],
         "raw": decision["raw"],
@@ -40,6 +41,9 @@ def build_record(decision, pairs, use_llm, live_orderbook, generated_at):
             "pairs": decision["pairs"],
         },
     }
+    if anonymize:
+        record["anonymization"] = {"mapping": decision.get("mapping")}
+    return record
 
 
 def main(argv=None):
@@ -49,6 +53,7 @@ def main(argv=None):
     parser.add_argument("--no-llm", action="store_true")
     parser.add_argument("--api-url", default=None)
     parser.add_argument("--live-orderbook", action="store_true")
+    parser.add_argument("--anonymize", action="store_true")
     args = parser.parse_args(argv)
 
     pairs = parse_pairs(args.pairs)
@@ -62,10 +67,13 @@ def main(argv=None):
         use_llm=use_llm,
         api_url=args.api_url,
         live_orderbook=args.live_orderbook,
+        anonymize=args.anonymize,
     )
 
     generated_at = common.iso_utc(common.utc_now())
-    record = build_record(decision, pairs, use_llm, args.live_orderbook, generated_at)
+    record = build_record(
+        decision, pairs, use_llm, args.live_orderbook, generated_at, anonymize=args.anonymize
+    )
     common.DECISIONS_DIR.mkdir(parents=True, exist_ok=True)
     out_path = common.DECISIONS_DIR / (asof_dt.strftime("%Y-%m-%d_%H%M") + ".json")
     with open(out_path, "w", encoding="utf-8") as fh:

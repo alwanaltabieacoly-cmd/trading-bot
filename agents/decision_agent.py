@@ -1,4 +1,6 @@
+import hashlib
 import json
+import random
 
 from . import common, market_agent, news_agent, risk_agent, session_agent
 
@@ -16,8 +18,148 @@ INSTRUCTION = (
 )
 
 
-def _build_prompt(pairs, asof, reports):
-    payload = {
+def _asset_mapping(pairs, asof_dt):
+    seed = int(
+        hashlib.sha256(common.iso_utc(asof_dt).encode("utf-8")).hexdigest(), 16
+    )
+    rng = random.Random(seed)
+    order = list(pairs)
+    rng.shuffle(order)
+    return {pair: f"ASSET_{index + 1}" for index, pair in enumerate(order)}
+
+
+def _ratio(value, base):
+    try:
+        value = float(value)
+        base = float(base)
+    except (TypeError, ValueError):
+        return None
+    if not base:
+        return None
+    return common.rnd(value / base - 1.0)
+
+
+def _anonymize_timeframe(tf):
+    if not isinstance(tf, dict) or not tf.get("available"):
+        return {"available": False}
+    close = tf.get("close")
+    ema50 = tf.get("ema50")
+    ema200 = tf.get("ema200")
+    return {
+        "available": True,
+        "close_over_ema50_minus_1": _ratio(close, ema50),
+        "close_over_ema200_minus_1": _ratio(close, ema200),
+        "ema50_over_ema200_minus_1": _ratio(ema50, ema200),
+        "ema50_slope_pct": tf.get("ema50_slope"),
+        "dist_to_high20_pct": tf.get("dist_to_high20_pct"),
+        "dist_to_low20_pct": tf.get("dist_to_low20_pct"),
+        "atr_pct": tf.get("atr_pct_14"),
+        "volume_z": tf.get("volume_z_48"),
+        "regime": tf.get("regime"),
+    }
+
+
+def _anonymize_market(market, mapping):
+    out = {"pairs": {}}
+    for real, asset in mapping.items():
+        entry = market.get("pairs", {}).get(real, {})
+        anon_entry = {
+            "timeframes": {
+                tf: _anonymize_timeframe(value)
+                for tf, value in entry.get("timeframes", {}).items()
+            }
+        }
+        if "orderbook" in entry:
+            orderbook = entry.get("orderbook")
+            if isinstance(orderbook, dict):
+                anon_entry["orderbook"] = {"spread_pct": orderbook.get("spread_pct")}
+            else:
+                anon_entry["orderbook"] = None
+        out["pairs"][asset] = anon_entry
+    return out
+
+
+def _anonymize_news(news):
+    fng = news.get("fng")
+    anon_fng = None
+    if isinstance(fng, dict):
+        anon_fng = {
+            "value": fng.get("value"),
+            "classification": fng.get("classification"),
+        }
+    gdelt = news.get("gdelt")
+    anon_gdelt = {}
+    if isinstance(gdelt, dict):
+        for query, slot in gdelt.items():
+            if isinstance(slot, dict):
+                anon_gdelt[query] = {
+                    "tone_24h": slot.get("tone_24h"),
+                    "tone_7d": slot.get("tone_7d"),
+                    "n_24h": slot.get("n_24h"),
+                    "n_7d": slot.get("n_7d"),
+                }
+    reddit = news.get("reddit")
+    anon_reddit = None
+    if isinstance(reddit, dict):
+        anon_reddit = {
+            key: value for key, value in reddit.items() if not isinstance(value, str)
+        }
+    return {
+        "fng": anon_fng,
+        "fng_7d_change": news.get("fng_7d_change"),
+        "gdelt": anon_gdelt,
+        "reddit": anon_reddit,
+    }
+
+
+def _anonymize_session(session, mapping):
+    out = {"current_session": session.get("current_session"), "pairs": {}}
+    for real, asset in mapping.items():
+        entry = session.get("pairs", {}).get(real, {})
+        if isinstance(entry, dict) and entry.get("available"):
+            out["pairs"][asset] = {"available": True, "session": entry.get("session")}
+        else:
+            out["pairs"][asset] = {"available": False}
+    return out
+
+
+def _anonymize_risk(risk):
+    btc = risk.get("btc")
+    reference = None
+    if isinstance(btc, dict):
+        reference = {
+            "available": btc.get("available"),
+            "below_ema200": btc.get("below_ema200"),
+        }
+    account = risk.get("account")
+    anon_account = None
+    if isinstance(account, dict):
+        anon_account = {"open_trades": account.get("open_trades")}
+    reasons = risk.get("reasons")
+    anon_reasons = []
+    if isinstance(reasons, list):
+        anon_reasons = [
+            str(reason).replace("BTC", "reference asset") for reason in reasons
+        ]
+    return {
+        "reference_asset_regime": reference,
+        "account": anon_account,
+        "drawdown": risk.get("drawdown"),
+        "size_cap": risk.get("size_cap"),
+        "reasons": anon_reasons,
+    }
+
+
+def _payload(pairs, reports, anonymize, mapping):
+    if anonymize:
+        return {
+            "pairs": [mapping[pair] for pair in pairs],
+            "market": _anonymize_market(reports["market"], mapping),
+            "news": _anonymize_news(reports["news"]),
+            "session": _anonymize_session(reports["session"], mapping),
+            "risk": _anonymize_risk(reports["risk"]),
+        }
+    return {
         "asof": reports["market"]["asof"],
         "pairs": list(pairs),
         "market": reports["market"],
@@ -25,6 +167,10 @@ def _build_prompt(pairs, asof, reports):
         "session": reports["session"],
         "risk": reports["risk"],
     }
+
+
+def _build_prompt(pairs, asof, reports, anonymize=False, mapping=None):
+    payload = _payload(pairs, reports, anonymize, mapping)
     return (
         INSTRUCTION
         + "\nDATA: "
@@ -33,11 +179,17 @@ def _build_prompt(pairs, asof, reports):
     )
 
 
-def _followup_prompt(base_prompt, followups, reports):
-    detail = {
-        "market": reports["market"],
-        "session": reports["session"],
-    }
+def _followup_prompt(base_prompt, followups, reports, anonymize=False, mapping=None):
+    if anonymize:
+        detail = {
+            "market": _anonymize_market(reports["market"], mapping),
+            "session": _anonymize_session(reports["session"], mapping),
+        }
+    else:
+        detail = {
+            "market": reports["market"],
+            "session": reports["session"],
+        }
     return (
         base_prompt
         + "\nFOLLOW-UP QUESTIONS: "
@@ -119,7 +271,14 @@ def _fallback(pairs, size_cap, market):
     return result
 
 
-def decide(pairs, asof, use_llm=True, api_url=None, live_orderbook=False):
+def decide(
+    pairs,
+    asof,
+    use_llm=True,
+    api_url=None,
+    live_orderbook=False,
+    anonymize=False,
+):
     asof_dt = common.parse_utc(asof)
     reports = {
         "market": market_agent.analyze(pairs, asof_dt, live_orderbook=live_orderbook),
@@ -127,6 +286,7 @@ def decide(pairs, asof, use_llm=True, api_url=None, live_orderbook=False):
         "session": session_agent.analyze(pairs, asof_dt),
         "risk": risk_agent.analyze(asof_dt, api_url=api_url),
     }
+    mapping = _asset_mapping(pairs, asof_dt) if anonymize else None
     size_cap = reports["risk"].get("size_cap", 0.0)
     prompts = []
     raws = []
@@ -134,7 +294,9 @@ def decide(pairs, asof, use_llm=True, api_url=None, live_orderbook=False):
     best = None
     model_used = None
     if use_llm:
-        prompt = _build_prompt(pairs, asof_dt, reports)
+        prompt = _build_prompt(
+            pairs, asof_dt, reports, anonymize=anonymize, mapping=mapping
+        )
         prompts.append(prompt)
         for round_index in range(3):
             obj, raw, model = common.call_llm(prompt, timeout=300)
@@ -150,11 +312,18 @@ def decide(pairs, asof, use_llm=True, api_url=None, live_orderbook=False):
             followups = [f for f in followups if isinstance(f, str) and f.strip()]
             if not followups or round_index >= 2:
                 break
-            prompt = _followup_prompt(prompt, followups, reports)
+            prompt = _followup_prompt(
+                prompt, followups, reports, anonymize=anonymize, mapping=mapping
+            )
             prompts.append(prompt)
     if best is not None:
         source = "llm"
-        decision_pairs = _normalize(best, pairs, size_cap)
+        if anonymize:
+            labels = [mapping[pair] for pair in pairs]
+            normalized = _normalize(best, labels, size_cap)
+            decision_pairs = {pair: normalized[mapping[pair]] for pair in pairs}
+        else:
+            decision_pairs = _normalize(best, pairs, size_cap)
     else:
         source = "fallback"
         model_used = None
@@ -168,4 +337,6 @@ def decide(pairs, asof, use_llm=True, api_url=None, live_orderbook=False):
         "reports": reports,
         "prompts": prompts,
         "raw": raws,
+        "anonymize": bool(anonymize),
+        "mapping": mapping,
     }
