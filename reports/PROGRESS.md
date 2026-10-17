@@ -89,3 +89,6 @@
 ## 2026-10-17 04:01 - INTERRUPTION
 - Session interrupted while polling the LLM replay; replay (PID 9396) and FreqaiExampleSpot 2022 run continued in background. Stage 4-6 table appended to STAGES.md.
 
+## 2026-10-17 04:06 - FreqaiExampleSpot 2022 held-out (20220415-20221231)
+- 1847 trades (7.1/day), -59.96%, max underwater 62.01%, Sharpe -19.03, market -69.58%. TOTAL row: |    TOTAL |   1847 |     -0.32 |   -59.959 |    -59.96 |  3:47:00 |       736 |
+

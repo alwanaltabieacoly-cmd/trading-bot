@@ -38,4 +38,4 @@ Walk-forward (train->test profit): TrendAdx1h W1 +1.34->-1.16, W2 +1.43->-0.88, 
 | EmaTrendBreakout | IS 2024-01..2025-06 | 370 | n/a | -8.07% | 10.89% | -0.79 | +116.22% |
 | EmaTrendBreakout | OOS 2025-07.. | 225 | 40.0% | -0.03% | 5.60% | -0.00 | -18.38% |
 | EmaTrendBreakout on 1m, BTC+ETH | 2026-09-15..10-15 | 547 | 11.0% | -11.89% | 11.92% | -207.44 | +0.37% |
-| FreqaiExampleSpot (stock example, long only) | OOS ..2026-10-15 | 1524 | 42.0% | -50.75% | 51.44% | -12.94 | -19.82% |
+| FreqaiExampleSpot (stock example, long only) | OOS ..2026-10-15 | 1524 | 42.0% | -50.75% | 51.44% | -12.94 | -19.82% || FreqaiExampleSpot | 2022 held-out (04-15..12-31) | 1847 | see PROGRESS | -59.96% | 62.01% | -19.03 | -69.58% |
