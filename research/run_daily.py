@@ -61,7 +61,7 @@ def save_state(state):
 # --------------------------------------------------------------------------
 
 
-def eval_candidate(cid, params, fn, frames):
+def eval_candidate(cid, params, fn, frames, train_end, holdout_start):
     """Evaluate one candidate across all assets and timeframes.
 
     frames: list of (asset, timeframe, df)
@@ -77,8 +77,8 @@ def eval_candidate(cid, params, fn, frames):
     try:
         for asset, tf, df in frames:
             dates = df["date"]
-            train_m = engine.date_mask(dates, end=config.TRAIN_END)
-            hold_m = engine.date_mask(dates, start=config.HOLDOUT_START)
+            train_m = engine.date_mask(dates, end=train_end)
+            hold_m = engine.date_mask(dates, start=holdout_start)
             if train_m.sum() < 60 or hold_m.sum() < 20:
                 continue
 
@@ -192,13 +192,15 @@ def main(argv=None):
     print(f"  loaded {len(frames)} asset/timeframe series")
 
     # 2. expand candidates
+    train_end, holdout_start = config.split_dates()
     candidates = strategies.expand()
     print(f"\n[2/5] evaluating {len(candidates)} candidates on the TRAIN window")
-    print(f"        train ends {config.TRAIN_END}, holdout starts {config.HOLDOUT_START}")
+    print(f"        train ends {train_end}, holdout starts {holdout_start} "
+          f"(rolling {config.HOLDOUT_DAYS}-day holdout)")
 
     results = []
     for i, (cid, params, fn, desc) in enumerate(candidates):
-        r = eval_candidate(cid, params, fn, frames)
+        r = eval_candidate(cid, params, fn, frames, train_end, holdout_start)
         if r and "error" not in r:
             results.append(r)
         if (i + 1) % 25 == 0:
@@ -260,9 +262,22 @@ def main(argv=None):
     champ = state.get("champion")
     champ_hold = None
     if champ:
-        champ_hold = champ.get("holdout_cagr")
+        # The champion is re-evaluated on EVERY run, because the holdout
+        # window rolls forward. Comparing a fresh candidate against a
+        # stored champion number would compare two different windows.
+        champ_row = next((r for r in results if r["id"] == champ.get("id")), None)
+        if champ_row:
+            champ_hold = champ_row["holdout_cagr"]
+            champ["holdout_cagr"] = champ_hold
+            champ["holdout_dd"] = champ_row["holdout_dd"]
+            champ["train_cagr"] = champ_row["train_cagr"]
+            champ["dsr"] = champ_row["dsr"]
+            champ["assets_positive"] = champ_row["assets_positive"]
+            champ["last_evaluated"] = config.now_iso()
+        else:
+            champ_hold = champ.get("holdout_cagr")
         print(f"\n[4/5] current champion: {champ.get('id')} "
-              f"(holdout CAGR {champ_hold:.1f}%)")
+              f"(holdout CAGR {champ_hold:.1f}% on the current window)")
     else:
         print("\n[4/5] no champion yet")
 
@@ -329,8 +344,9 @@ def main(argv=None):
             "timeframes": config.TIMEFRAMES,
             "fee_per_side": config.FEE_PER_SIDE,
             "slippage_per_side": config.SLIPPAGE_PER_SIDE,
-            "train_end": config.TRAIN_END,
-            "holdout_start": config.HOLDOUT_START,
+            "train_end": train_end,
+            "holdout_start": holdout_start,
+            "holdout_days": config.HOLDOUT_DAYS,
             "min_train_cagr": config.MIN_TRAIN_CAGR_PCT,
             "min_holdout_cagr": config.MIN_HOLDOUT_CAGR_PCT,
             "min_asset_consistency": config.MIN_ASSET_CONSISTENCY,
@@ -384,14 +400,23 @@ def main(argv=None):
         ),
     }
 
-    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    json_path = os.path.join(config.REPORT_DIR, f"{day}.json")
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
+    json_path = os.path.join(config.REPORT_DIR, f"{stamp}.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
 
-    md_path = os.path.join(config.REPORT_DIR, f"{day}.md")
+    md_path = os.path.join(config.REPORT_DIR, f"{stamp}.md")
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(render_markdown(report, results))
+
+    # Cumulative count of every candidate ever evaluated. The Deflated
+    # Sharpe correction inside a single run only accounts for the trials in
+    # THAT run. This counter is the honest record of how many times the
+    # whole search has been repeated, which is the real degree of freedom
+    # a researcher accumulates over time.
+    cumulative = int(state.get("cumulative_candidates_tested", 0)) + n_trials
+    state["cumulative_candidates_tested"] = cumulative
+    report["cumulative_candidates_tested"] = cumulative
 
     state["last_run"] = config.now_iso()
     state["last_run_report"] = os.path.basename(json_path)
@@ -402,8 +427,15 @@ def main(argv=None):
         "best_id": report["best_overall_by_holdout"]["id"] if report["best_overall_by_holdout"] else None,
         "best_holdout_cagr": report["best_overall_by_holdout"]["holdout_cagr"] if report["best_overall_by_holdout"] else None,
         "challenger_proposed": promoted,
-    }])[-90:]
+        "train_end": train_end,
+        "holdout_start": holdout_start,
+    }])[-400:]
     save_state(state)
+
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(render_markdown(report, results))
 
     print(f"\nreport: {json_path}")
     print(f"        {md_path}")
@@ -421,7 +453,10 @@ def render_markdown(report, results):
     lines.append(f"- Costs modelled: {c['fee_per_side'] * 100:.2f}% fee + "
                  f"{c['slippage_per_side'] * 100:.2f}% slippage per side")
     lines.append(f"- Train window: ... -> {c['train_end']}  |  "
-                 f"Holdout window: {c['holdout_start']} -> now")
+                 f"Holdout window: {c['holdout_start']} -> now "
+                 f"(rolling {c.get('holdout_days', 180)}-day holdout)")
+    lines.append(f"- Cumulative candidates ever tested: "
+                 f"{report.get('cumulative_candidates_tested', c['n_trials'])}")
     lines.append("")
 
     champ = report.get("champion")

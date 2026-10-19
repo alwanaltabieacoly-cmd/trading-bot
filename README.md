@@ -59,14 +59,24 @@ Two things this test also proved, which is why they are in the rules:
 
 1. Fetch fresh Bybit candles and update the local cache.
 2. Backtest **every** candidate in the strategy registry on the **train
-   window** (everything up to 2024-12-31).
+   window** (everything up to the rolling split point).
 3. Filter by the promotion rules.
-4. Score survivors on the **holdout window** (2025-01-01 onward) — data
-   the search never saw.
+4. Score survivors on the **holdout window** — the most recent 180 days,
+   which the search never saw.
 5. Apply the **Deflated Sharpe Ratio** correction for how many candidates
    were tried.
-6. Compare the best survivor to the current champion.
-7. Write a dated report and update the champion state.
+6. Re-evaluate the current champion on the same window.
+7. Compare the best survivor to the champion.
+8. Write a timestamped report and update the champion state.
+
+### The split rolls forward
+
+The holdout is **always the most recent 180 days**, and the split point
+moves on every run. That is deliberate. The harness runs every 4 hours,
+so with a fixed holdout a strategy could slowly "learn" the holdout just
+by being examined over and over. With a rolling window, every run tests
+against a stretch of data that was genuinely unseen when the selection was
+made.
 
 ### Why it will not fool itself
 
@@ -89,6 +99,11 @@ On top of that, **nothing is promoted on backtest alone.** A challenger
 becomes a *challenger* and must confirm itself in live paper trading
 before it becomes the champion.
 
+The state file also keeps a **cumulative count of every candidate ever
+tested**. The Deflated Sharpe correction inside a single run only accounts
+for that run's trials; the cumulative counter is the honest record of how
+many times the whole search has been repeated over time.
+
 ### Running it
 
 ```bash
@@ -97,8 +112,8 @@ python -m research.run_daily              # fetch fresh data and run
 python -m research.run_daily --no-fetch   # use the cached data
 ```
 
-Output lands in `research/reports/YYYY-MM-DD.{json,md}` and the champion
-state in `research/state/champion.json`.
+Output lands in `research/reports/YYYY-MM-DD_HHMM.{json,md}` and the
+champion state in `research/state/champion.json`.
 
 ### The strategy library
 
@@ -123,9 +138,15 @@ picks it up automatically.
 
 ## GitHub Actions
 
-`.github/workflows/daily-research.yml` runs the harness every day at
-06:17 UTC and commits the report and champion state back to the repo. The
-history of daily runs is therefore the audit trail.
+`.github/workflows/strategy-research.yml` runs the harness **every 4 hours**
+(06:17, 10:17, 14:17, 18:17, 22:17, 02:17 UTC) and commits the report and
+champion state back to the repo. The history of runs is therefore the audit
+trail.
+
+The repository is **public on purpose**: GitHub Actions minutes are
+unlimited on public repositories, so a 6x/day cadence costs nothing. There
+are no secrets in it — every exchange credential field in `user_data/*.json`
+is an empty string, and `config.private.json` is git-ignored.
 
 The workflow only reads market data and writes reports. It has no exchange
 credentials and cannot place an order.

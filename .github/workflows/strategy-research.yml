@@ -1,7 +1,10 @@
-name: Daily research
+name: Strategy research
 
-# Runs the strategy research harness on a schedule. This works with the
+# Runs the strategy research harness every 4 hours. This works with the
 # PC switched off - GitHub runs it on their runners.
+#
+# On a PUBLIC repository GitHub Actions minutes are unlimited, so a
+# 6x/day cadence costs nothing.
 #
 # The job only ever READS market data and WRITES reports. It never places
 # an order, never touches exchange credentials, and never touches money.
@@ -9,9 +12,10 @@ name: Daily research
 
 on:
   schedule:
-    # 06:17 UTC daily. An off-round minute avoids the GitHub cron pile-up
-    # that makes scheduled jobs start late.
-    - cron: "17 6 * * *"
+    # Every 4 hours, on an off-round minute so the job does not sit in
+    # GitHub's cron pile-up. That is 06:17, 10:17, 14:17, 18:17, 22:17,
+    # 02:17 UTC.
+    - cron: "17 */4 * * *"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -20,16 +24,16 @@ on:
         default: false
 
 concurrency:
-  group: daily-research
+  group: strategy-research
   cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   research:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout
@@ -46,7 +50,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install ccxt pandas numpy pyarrow
 
-      - name: Run daily research
+      - name: Run research
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
@@ -58,23 +62,22 @@ jobs:
 
       - name: Commit report and state
         run: |
-          git config user.name "opencode-research-bot"
-          git config user.email "opencode-research-bot@users.noreply.github.com"
+          git config user.name "research-bot"
+          git config user.email "research-bot@users.noreply.github.com"
           git add research/reports research/state research/data
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else
-            git commit -m "research: daily run $(date -u +%Y-%m-%d)"
+            git commit -m "research: run $(date -u +%Y-%m-%d_%H%M)"
             git push
           fi
 
       - name: Summary
         run: |
-          echo "### Daily research complete" >> $GITHUB_STEP_SUMMARY
+          echo "### Research run complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f "research/state/champion.json" ]; then
-            python - <<'PY' >> $GITHUB_STEP_SUMMARY
-          import json, os
+          python - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json, os, glob
           state = json.load(open("research/state/champion.json"))
           champ = state.get("champion") or {}
           print(f"**Champion:** `{champ.get('id', 'none')}`")
@@ -84,7 +87,10 @@ jobs:
           ch = state.get("challenger")
           if ch:
               print("")
-              print(f"**Challenger awaiting paper confirmation:** `{ch.get('id')}`")
+              print(f"**Challenger (awaiting paper confirmation):** `{ch.get('id')}`")
               print(f"- holdout CAGR: {ch.get('holdout_cagr', 'n/a')}%")
+          print("")
+          print(f"- cumulative candidates tested: {state.get('cumulative_candidates_tested', 'n/a')}")
+          reports = sorted(glob.glob("research/reports/*.md"))
+          print(f"- reports on file: {len(reports)}")
           PY
-          fi

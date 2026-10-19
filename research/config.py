@@ -18,11 +18,34 @@ COST_PER_SIDE = FEE_PER_SIDE + SLIPPAGE_PER_SIDE
 # --- periods --------------------------------------------------------------
 PERIODS_PER_YEAR = {"1d": 365, "4h": 6 * 365, "1h": 24 * 365, "15m": 96 * 365}
 
-# Train window ends here. Candidates are SELECTED using data up to this date.
-TRAIN_END = "2024-12-31"
-# Holdout window starts here. The search NEVER sees this data.
-# It exists only to give a final verdict on survivors.
-HOLDOUT_START = "2025-01-01"
+# Rolling walk-forward split.
+#
+# The holdout is ALWAYS the most recent HOLDOUT_DAYS of market data, and it
+# is NEVER used to select between candidates. Because the window rolls
+# forward on every run, each run tests the strategies against a stretch of
+# data that was genuinely unseen when the selection was made.
+#
+# That matters because the harness runs every few hours: with a fixed
+# holdout, a strategy could slowly "learn" the holdout just by being
+# looked at repeatedly. With a rolling one, the holdout keeps moving.
+HOLDOUT_DAYS = 180
+
+
+def split_dates(today=None):
+    """Return (train_end, holdout_start) as ISO date strings.
+
+    train_end    : last day usable for SELECTION
+    holdout_start: first day of the untouched evaluation window
+    """
+    import datetime as dt
+
+    today = today or dt.datetime.now(dt.timezone.utc)
+    holdout_start = (today.date() - dt.timedelta(days=HOLDOUT_DAYS))
+    train_end = holdout_start - dt.timedelta(days=1)
+    return train_end.isoformat(), holdout_start.isoformat()
+
+
+TRAIN_END, HOLDOUT_START = split_dates()
 
 # --- promotion rules ------------------------------------------------------
 # A challenger must clear ALL of these to even be considered.
