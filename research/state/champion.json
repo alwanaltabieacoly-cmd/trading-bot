@@ -25,9 +25,17 @@
       "best_id": "sma_trend_vol_filter_period250_vol_lookback30_vol_max_pct4.0",
       "best_holdout_cagr": 5.231,
       "challenger_proposed": false
+    },
+    {
+      "at": "2026-10-19T23:22:52+00:00",
+      "n_candidates": 76,
+      "n_survivors": 0,
+      "best_id": "sma_trend_vol_filter_period250_vol_lookback30_vol_max_pct4.0",
+      "best_holdout_cagr": 5.297,
+      "challenger_proposed": false
     }
   ],
   "created": "2026-10-19T23:13:09+00:00",
-  "last_run": "2026-10-19T23:13:09+00:00",
+  "last_run": "2026-10-19T23:22:52+00:00",
   "last_run_report": "2026-10-19.json"
 }
