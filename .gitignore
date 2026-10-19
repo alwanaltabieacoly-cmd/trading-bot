@@ -12,3 +12,17 @@ reports/decisions/_prompts/
 __pycache__/
 *.sqlite-shm
 *.sqlite-wal
+
+# research harness
+research/data/*_1m.parquet
+research/data/*_5m.parquet
+research/data/*_15m.parquet
+research/data/*_1h.parquet
+research/logs/
+research/__pycache__/
+
+# large local caches and stage logs
+.hf_cache/
+*.out
+user_data/hyperopts/
+

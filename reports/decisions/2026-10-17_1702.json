@@ -1,0 +1,788 @@
+{
+  "asof": "2026-10-17T17:02:19.840277+00:00",
+  "generated_at": "2026-10-17T17:07:26.457245+00:00",
+  "pairs": [
+    "BTC/USDT",
+    "ETH/USDT",
+    "SOL/USDT",
+    "BNB/USDT",
+    "XRP/USDT"
+  ],
+  "live_orderbook": true,
+  "use_llm": true,
+  "anonymize": false,
+  "inputs": {
+    "market": {
+      "asof": "2026-10-17T17:02:19.840277+00:00",
+      "live_orderbook": true,
+      "pairs": {
+        "BTC/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": true,
+              "close": 81211.6,
+              "ema50": 81299.749823,
+              "ema200": 81422.205427,
+              "ema50_slope": -0.017769,
+              "dist_to_high20_pct": -0.174792,
+              "dist_to_low20_pct": 0.021923,
+              "atr_pct_14": 0.036835,
+              "volume_z_48": 0.833595,
+              "regime": "bear"
+            },
+            "5m": {
+              "available": true,
+              "close": 81259.8,
+              "ema50": 81444.338883,
+              "ema200": 81570.805252,
+              "ema50_slope": -0.045119,
+              "dist_to_high20_pct": -0.360498,
+              "dist_to_low20_pct": 0.080424,
+              "atr_pct_14": 0.090161,
+              "volume_z_48": 0.648949,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 81259.8,
+              "ema50": 81541.462704,
+              "ema200": 81772.673312,
+              "ema50_slope": -0.05873,
+              "dist_to_high20_pct": -0.437776,
+              "dist_to_low20_pct": 0.080424,
+              "atr_pct_14": 0.111283,
+              "volume_z_48": 2.444656,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 81259.8,
+              "ema50": 81751.246152,
+              "ema200": 82523.862107,
+              "ema50_slope": -0.084867,
+              "dist_to_high20_pct": -0.684431,
+              "dist_to_low20_pct": 0.080424,
+              "atr_pct_14": 0.187845,
+              "volume_z_48": 0.113134,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 81353.7,
+              "ema50": 82555.051337,
+              "ema200": 82025.078701,
+              "ema50_slope": -0.264924,
+              "dist_to_high20_pct": -3.308747,
+              "dist_to_low20_pct": 1.950825,
+              "atr_pct_14": 0.975915,
+              "volume_z_48": -0.758354,
+              "regime": "range"
+            },
+            "1d": {
+              "available": true,
+              "close": 81614.0,
+              "ema50": 80422.544105,
+              "ema200": 75789.222006,
+              "ema50_slope": 0.46295,
+              "dist_to_high20_pct": -6.466353,
+              "dist_to_low20_pct": 2.277028,
+              "atr_pct_14": 2.588649,
+              "volume_z_48": 1.496859,
+              "regime": "bull"
+            }
+          },
+          "orderbook": {
+            "spread_pct": 0.000123,
+            "bid_depth_1pct_usdt": 273292.62,
+            "ask_depth_1pct_usdt": 254254.02
+          }
+        },
+        "ETH/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": true,
+              "close": 2403.99,
+              "ema50": 2407.19705,
+              "ema200": 2416.058758,
+              "ema50_slope": -0.034454,
+              "dist_to_high20_pct": -0.215426,
+              "dist_to_low20_pct": 0.21051,
+              "atr_pct_14": 0.076777,
+              "volume_z_48": 1.496624,
+              "regime": "bear"
+            },
+            "5m": {
+              "available": true,
+              "close": 2404.12,
+              "ema50": 2417.923096,
+              "ema200": 2426.655258,
+              "ema50_slope": -0.112064,
+              "dist_to_high20_pct": -0.670975,
+              "dist_to_low20_pct": 0.215929,
+              "atr_pct_14": 0.180761,
+              "volume_z_48": 2.466258,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 2404.12,
+              "ema50": 2425.203382,
+              "ema200": 2432.72357,
+              "ema50_slope": -0.152121,
+              "dist_to_high20_pct": -1.307487,
+              "dist_to_low20_pct": 0.215929,
+              "atr_pct_14": 0.260862,
+              "volume_z_48": 2.715286,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 2404.12,
+              "ema50": 2431.861753,
+              "ema200": 2481.303458,
+              "ema50_slope": -0.123404,
+              "dist_to_high20_pct": -1.5528,
+              "dist_to_low20_pct": 0.215929,
+              "atr_pct_14": 0.385647,
+              "volume_z_48": 0.162041,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 2410.57,
+              "ema50": 2481.892907,
+              "ema200": 2537.568273,
+              "ema50_slope": -0.494411,
+              "dist_to_high20_pct": -4.741638,
+              "dist_to_low20_pct": 3.993529,
+              "atr_pct_14": 1.486104,
+              "volume_z_48": -0.669576,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 2423.45,
+              "ema50": 2493.092743,
+              "ema200": 2311.156549,
+              "ema50_slope": -0.419651,
+              "dist_to_high20_pct": -12.769059,
+              "dist_to_low20_pct": 4.54918,
+              "atr_pct_14": 3.860936,
+              "volume_z_48": 0.194197,
+              "regime": "bull"
+            }
+          },
+          "orderbook": {
+            "spread_pct": 0.000416,
+            "bid_depth_1pct_usdt": 319498.97,
+            "ask_depth_1pct_usdt": 115279.96
+          }
+        },
+        "SOL/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 103.19,
+              "ema50": 103.895263,
+              "ema200": 104.407122,
+              "ema50_slope": -0.12491,
+              "dist_to_high20_pct": -0.902718,
+              "dist_to_low20_pct": 0.135856,
+              "atr_pct_14": 0.220121,
+              "volume_z_48": 1.129535,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 103.19,
+              "ema50": 104.317046,
+              "ema200": 104.806904,
+              "ema50_slope": -0.170314,
+              "dist_to_high20_pct": -1.423386,
+              "dist_to_low20_pct": 0.135856,
+              "atr_pct_14": 0.335719,
+              "volume_z_48": 0.608609,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 103.19,
+              "ema50": 104.760748,
+              "ema200": 107.689433,
+              "ema50_slope": -0.202058,
+              "dist_to_high20_pct": -1.985182,
+              "dist_to_low20_pct": 0.135856,
+              "atr_pct_14": 0.491465,
+              "volume_z_48": -0.327033,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 103.63,
+              "ema50": 107.699506,
+              "ema200": 109.971026,
+              "ema50_slope": -0.642192,
+              "dist_to_high20_pct": -4.646669,
+              "dist_to_low20_pct": 2.960755,
+              "atr_pct_14": 1.639762,
+              "volume_z_48": -0.877649,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 104.44,
+              "ema50": 107.144546,
+              "ema200": 97.696791,
+              "ema50_slope": -0.374854,
+              "dist_to_high20_pct": -16.421255,
+              "dist_to_low20_pct": 3.765524,
+              "atr_pct_14": 4.626033,
+              "volume_z_48": -0.78394,
+              "regime": "bull"
+            }
+          },
+          "orderbook": {
+            "spread_pct": 0.009703,
+            "bid_depth_1pct_usdt": 1155789.22,
+            "ask_depth_1pct_usdt": 1282628.57
+          }
+        },
+        "BNB/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 713.58,
+              "ema50": 717.820171,
+              "ema200": 720.68631,
+              "ema50_slope": -0.110239,
+              "dist_to_high20_pct": -0.965942,
+              "dist_to_low20_pct": 0.13893,
+              "atr_pct_14": 0.105004,
+              "volume_z_48": 0.645973,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 713.58,
+              "ema50": 719.982802,
+              "ema200": 724.453669,
+              "ema50_slope": -0.164764,
+              "dist_to_high20_pct": -1.302905,
+              "dist_to_low20_pct": 0.13893,
+              "atr_pct_14": 0.196794,
+              "volume_z_48": 1.324046,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 713.58,
+              "ema50": 724.173834,
+              "ema200": 737.804307,
+              "ema50_slope": -0.195752,
+              "dist_to_high20_pct": -1.343841,
+              "dist_to_low20_pct": 0.13893,
+              "atr_pct_14": 0.291388,
+              "volume_z_48": 1.562553,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 714.89,
+              "ema50": 737.67403,
+              "ema200": 745.338107,
+              "ema50_slope": -0.51758,
+              "dist_to_high20_pct": -4.312618,
+              "dist_to_low20_pct": 0.816528,
+              "atr_pct_14": 0.914526,
+              "volume_z_48": 0.128448,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 721.42,
+              "ema50": 733.474069,
+              "ema200": 686.376907,
+              "ema50_slope": -0.078062,
+              "dist_to_high20_pct": -10.957788,
+              "dist_to_low20_pct": 1.737414,
+              "atr_pct_14": 3.11271,
+              "volume_z_48": -1.071609,
+              "regime": "bull"
+            }
+          },
+          "orderbook": {
+            "spread_pct": 0.001402,
+            "bid_depth_1pct_usdt": 40152.05,
+            "ask_depth_1pct_usdt": 260561.25
+          }
+        },
+        "XRP/USDT": {
+          "timeframes": {
+            "1m": {
+              "available": false
+            },
+            "5m": {
+              "available": true,
+              "close": 1.2912,
+              "ema50": 1.296913,
+              "ema200": 1.304226,
+              "ema50_slope": -0.093424,
+              "dist_to_high20_pct": -0.638707,
+              "dist_to_low20_pct": 0.256231,
+              "atr_pct_14": 0.207448,
+              "volume_z_48": 0.28667,
+              "regime": "bear"
+            },
+            "15m": {
+              "available": true,
+              "close": 1.2912,
+              "ema50": 1.302244,
+              "ema200": 1.316492,
+              "ema50_slope": -0.165724,
+              "dist_to_high20_pct": -1.254206,
+              "dist_to_low20_pct": 0.256231,
+              "atr_pct_14": 0.311449,
+              "volume_z_48": 0.356944,
+              "regime": "bear"
+            },
+            "1h": {
+              "available": true,
+              "close": 1.2912,
+              "ema50": 1.315812,
+              "ema200": 1.359737,
+              "ema50_slope": -0.329284,
+              "dist_to_high20_pct": -1.645338,
+              "dist_to_low20_pct": 0.256231,
+              "atr_pct_14": 0.470769,
+              "volume_z_48": -0.276172,
+              "regime": "bear"
+            },
+            "4h": {
+              "available": true,
+              "close": 1.293,
+              "ema50": 1.359856,
+              "ema200": 1.406825,
+              "ema50_slope": -0.876591,
+              "dist_to_high20_pct": -6.757049,
+              "dist_to_low20_pct": 0.708778,
+              "atr_pct_14": 1.556734,
+              "volume_z_48": -0.683451,
+              "regime": "bear"
+            },
+            "1d": {
+              "available": true,
+              "close": 1.3114,
+              "ema50": 1.387877,
+              "ema200": 1.377908,
+              "ema50_slope": -0.813771,
+              "dist_to_high20_pct": -15.984368,
+              "dist_to_low20_pct": 2.141911,
+              "atr_pct_14": 4.242467,
+              "volume_z_48": -0.737107,
+              "regime": "range"
+            }
+          },
+          "orderbook": {
+            "spread_pct": 0.007747,
+            "bid_depth_1pct_usdt": 564342.94,
+            "ask_depth_1pct_usdt": 740602.75
+          }
+        }
+      }
+    },
+    "news": {
+      "asof": "2026-10-17T17:02:19.840277+00:00",
+      "fng": {
+        "value": 55,
+        "classification": "Greed",
+        "date": "2026-10-17",
+        "source": "sqlite"
+      },
+      "fng_7d_change": null,
+      "gdelt": {
+        "bitcoin": {
+          "tone_24h": -0.860285,
+          "tone_7d": -0.386734,
+          "n_24h": 61,
+          "n_7d": 151
+        },
+        "ethereum": {
+          "tone_24h": 0.049979,
+          "tone_7d": 0.041358,
+          "n_24h": 29,
+          "n_7d": 77
+        }
+      },
+      "reddit": null
+    },
+    "session": {
+      "asof": "2026-10-17T17:02:19.840277+00:00",
+      "current_weekday": "Saturday",
+      "current_session": [
+        "ny"
+      ],
+      "pairs": {
+        "BTC/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.014947,
+              "mean_abs_return": 0.293573,
+              "n": 312
+            },
+            "Tuesday": {
+              "mean_return": -0.006694,
+              "mean_abs_return": 0.247022,
+              "n": 312
+            },
+            "Wednesday": {
+              "mean_return": 0.005311,
+              "mean_abs_return": 0.276135,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": 0.030304,
+              "mean_abs_return": 0.26582,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.013424,
+              "mean_abs_return": 0.286454,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": 0.002372,
+              "mean_abs_return": 0.106514,
+              "n": 305
+            },
+            "Sunday": {
+              "mean_return": 0.020826,
+              "mean_abs_return": 0.152981,
+              "n": 293
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": 0.00528,
+              "mean_abs_return": 0.209207,
+              "n": 720
+            },
+            "london": {
+              "mean_return": 0.022433,
+              "mean_abs_return": 0.288983,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": 0.01614,
+              "mean_abs_return": 0.26852,
+              "n": 718
+            }
+          }
+        },
+        "ETH/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.005074,
+              "mean_abs_return": 0.351853,
+              "n": 312
+            },
+            "Tuesday": {
+              "mean_return": -0.012284,
+              "mean_abs_return": 0.309298,
+              "n": 312
+            },
+            "Wednesday": {
+              "mean_return": 0.031775,
+              "mean_abs_return": 0.383402,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": 0.012481,
+              "mean_abs_return": 0.348716,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.026002,
+              "mean_abs_return": 0.345957,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": -0.000365,
+              "mean_abs_return": 0.150247,
+              "n": 305
+            },
+            "Sunday": {
+              "mean_return": 0.02983,
+              "mean_abs_return": 0.250223,
+              "n": 293
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": 0.005435,
+              "mean_abs_return": 0.259314,
+              "n": 720
+            },
+            "london": {
+              "mean_return": 0.011767,
+              "mean_abs_return": 0.356453,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": 0.028588,
+              "mean_abs_return": 0.363143,
+              "n": 718
+            }
+          }
+        },
+        "SOL/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.013814,
+              "mean_abs_return": 0.406437,
+              "n": 312
+            },
+            "Tuesday": {
+              "mean_return": -0.026932,
+              "mean_abs_return": 0.38265,
+              "n": 312
+            },
+            "Wednesday": {
+              "mean_return": 0.019158,
+              "mean_abs_return": 0.423082,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": 0.025632,
+              "mean_abs_return": 0.425285,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.042613,
+              "mean_abs_return": 0.427817,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": 0.011158,
+              "mean_abs_return": 0.268493,
+              "n": 305
+            },
+            "Sunday": {
+              "mean_return": 0.027148,
+              "mean_abs_return": 0.342434,
+              "n": 293
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": 0.01069,
+              "mean_abs_return": 0.359632,
+              "n": 720
+            },
+            "london": {
+              "mean_return": 0.016317,
+              "mean_abs_return": 0.417813,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": 0.025616,
+              "mean_abs_return": 0.426639,
+              "n": 718
+            }
+          }
+        },
+        "BNB/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": -0.012268,
+              "mean_abs_return": 0.26812,
+              "n": 312
+            },
+            "Tuesday": {
+              "mean_return": 0.003142,
+              "mean_abs_return": 0.240713,
+              "n": 312
+            },
+            "Wednesday": {
+              "mean_return": -0.001488,
+              "mean_abs_return": 0.292295,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": 0.029892,
+              "mean_abs_return": 0.283117,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.015691,
+              "mean_abs_return": 0.272419,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": 0.031738,
+              "mean_abs_return": 0.237772,
+              "n": 305
+            },
+            "Sunday": {
+              "mean_return": 0.013606,
+              "mean_abs_return": 0.216036,
+              "n": 293
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": 0.007781,
+              "mean_abs_return": 0.256245,
+              "n": 720
+            },
+            "london": {
+              "mean_return": 0.015467,
+              "mean_abs_return": 0.294563,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": 0.008536,
+              "mean_abs_return": 0.276238,
+              "n": 718
+            }
+          }
+        },
+        "XRP/USDT": {
+          "available": true,
+          "weekday": {
+            "Monday": {
+              "mean_return": 0.001311,
+              "mean_abs_return": 0.453427,
+              "n": 312
+            },
+            "Tuesday": {
+              "mean_return": -0.021583,
+              "mean_abs_return": 0.43133,
+              "n": 312
+            },
+            "Wednesday": {
+              "mean_return": -0.017185,
+              "mean_abs_return": 0.484314,
+              "n": 312
+            },
+            "Thursday": {
+              "mean_return": 0.04709,
+              "mean_abs_return": 0.488036,
+              "n": 312
+            },
+            "Friday": {
+              "mean_return": 0.032996,
+              "mean_abs_return": 0.49734,
+              "n": 312
+            },
+            "Saturday": {
+              "mean_return": 0.013572,
+              "mean_abs_return": 0.346485,
+              "n": 305
+            },
+            "Sunday": {
+              "mean_return": 0.017319,
+              "mean_abs_return": 0.324495,
+              "n": 293
+            }
+          },
+          "session": {
+            "asia": {
+              "mean_return": 0.026184,
+              "mean_abs_return": 0.388768,
+              "n": 720
+            },
+            "london": {
+              "mean_return": 0.020082,
+              "mean_abs_return": 0.483171,
+              "n": 810
+            },
+            "ny": {
+              "mean_return": -0.00021,
+              "mean_abs_return": 0.50257,
+              "n": 718
+            }
+          }
+        }
+      }
+    },
+    "risk": {
+      "asof": "2026-10-17T17:02:19.840277+00:00",
+      "btc": {
+        "available": true,
+        "close": 81614.0,
+        "ema200": 75789.222006,
+        "below_ema200": false
+      },
+      "account": {
+        "max_drawdown": 0.0,
+        "open_trades": 0,
+        "profit_all_coin": 0.0,
+        "stake_currency": null
+      },
+      "drawdown": 0.0,
+      "size_cap": 1.0,
+      "reasons": []
+    }
+  },
+  "prompts": [
+    "You are a risk veto layer for a crypto spot trading bot (Bybit, USDT pairs). Every number below is precomputed by deterministic Python agents; your job is only to interpret them. You may only ALLOW or BLOCK entries per pair and optionally shrink the position size. You can never place, modify or close orders. When in doubt, block. Respond with ONLY one JSON object and nothing else, no prose and no code fences, using exactly this schema: {\"pairs\": {\"<PAIR>\": {\"action\": \"allow\" or \"block\", \"size\": <0.0-1.0>, \"confidence\": <0.0-1.0>, \"rationale\": \"<short text>\"}}, \"followups\": [\"<question>\", \"...\"]}. Include one entry for every requested pair. size is a fraction of the normal stake. followups may be an empty list if no further data is needed.\nDATA: {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"pairs\": [\"BTC/USDT\", \"ETH/USDT\", \"SOL/USDT\", \"BNB/USDT\", \"XRP/USDT\"], \"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"news\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"fng\": {\"value\": 55, \"classification\": \"Greed\", \"date\": \"2026-10-17\", \"source\": \"sqlite\"}, \"fng_7d_change\": null, \"gdelt\": {\"bitcoin\": {\"tone_24h\": -0.860285, \"tone_7d\": -0.386734, \"n_24h\": 61, \"n_7d\": 151}, \"ethereum\": {\"tone_24h\": 0.049979, \"tone_7d\": 0.041358, \"n_24h\": 29, \"n_7d\": 77}}, \"reddit\": null}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}, \"risk\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"btc\": {\"available\": true, \"close\": 81614.0, \"ema200\": 75789.222006, \"below_ema200\": false}, \"account\": {\"max_drawdown\": 0.0, \"open_trades\": 0, \"profit_all_coin\": 0.0, \"stake_currency\": null}, \"drawdown\": 0.0, \"size_cap\": 1.0, \"reasons\": []}}\nReturn only the JSON object now.",
+    "You are a risk veto layer for a crypto spot trading bot (Bybit, USDT pairs). Every number below is precomputed by deterministic Python agents; your job is only to interpret them. You may only ALLOW or BLOCK entries per pair and optionally shrink the position size. You can never place, modify or close orders. When in doubt, block. Respond with ONLY one JSON object and nothing else, no prose and no code fences, using exactly this schema: {\"pairs\": {\"<PAIR>\": {\"action\": \"allow\" or \"block\", \"size\": <0.0-1.0>, \"confidence\": <0.0-1.0>, \"rationale\": \"<short text>\"}}, \"followups\": [\"<question>\", \"...\"]}. Include one entry for every requested pair. size is a fraction of the normal stake. followups may be an empty list if no further data is needed.\nDATA: {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"pairs\": [\"BTC/USDT\", \"ETH/USDT\", \"SOL/USDT\", \"BNB/USDT\", \"XRP/USDT\"], \"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"news\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"fng\": {\"value\": 55, \"classification\": \"Greed\", \"date\": \"2026-10-17\", \"source\": \"sqlite\"}, \"fng_7d_change\": null, \"gdelt\": {\"bitcoin\": {\"tone_24h\": -0.860285, \"tone_7d\": -0.386734, \"n_24h\": 61, \"n_7d\": 151}, \"ethereum\": {\"tone_24h\": 0.049979, \"tone_7d\": 0.041358, \"n_24h\": 29, \"n_7d\": 77}}, \"reddit\": null}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}, \"risk\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"btc\": {\"available\": true, \"close\": 81614.0, \"ema200\": 75789.222006, \"below_ema200\": false}, \"account\": {\"max_drawdown\": 0.0, \"open_trades\": 0, \"profit_all_coin\": 0.0, \"stake_currency\": null}, \"drawdown\": 0.0, \"size_cap\": 1.0, \"reasons\": []}}\nReturn only the JSON object now.\nFOLLOW-UP QUESTIONS: [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\"]\nFULL MARKET AND SESSION DETAIL: {\"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}}\nAnswer again with the same JSON schema and only that JSON.",
+    "You are a risk veto layer for a crypto spot trading bot (Bybit, USDT pairs). Every number below is precomputed by deterministic Python agents; your job is only to interpret them. You may only ALLOW or BLOCK entries per pair and optionally shrink the position size. You can never place, modify or close orders. When in doubt, block. Respond with ONLY one JSON object and nothing else, no prose and no code fences, using exactly this schema: {\"pairs\": {\"<PAIR>\": {\"action\": \"allow\" or \"block\", \"size\": <0.0-1.0>, \"confidence\": <0.0-1.0>, \"rationale\": \"<short text>\"}}, \"followups\": [\"<question>\", \"...\"]}. Include one entry for every requested pair. size is a fraction of the normal stake. followups may be an empty list if no further data is needed.\nDATA: {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"pairs\": [\"BTC/USDT\", \"ETH/USDT\", \"SOL/USDT\", \"BNB/USDT\", \"XRP/USDT\"], \"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"news\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"fng\": {\"value\": 55, \"classification\": \"Greed\", \"date\": \"2026-10-17\", \"source\": \"sqlite\"}, \"fng_7d_change\": null, \"gdelt\": {\"bitcoin\": {\"tone_24h\": -0.860285, \"tone_7d\": -0.386734, \"n_24h\": 61, \"n_7d\": 151}, \"ethereum\": {\"tone_24h\": 0.049979, \"tone_7d\": 0.041358, \"n_24h\": 29, \"n_7d\": 77}}, \"reddit\": null}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}, \"risk\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"btc\": {\"available\": true, \"close\": 81614.0, \"ema200\": 75789.222006, \"below_ema200\": false}, \"account\": {\"max_drawdown\": 0.0, \"open_trades\": 0, \"profit_all_coin\": 0.0, \"stake_currency\": null}, \"drawdown\": 0.0, \"size_cap\": 1.0, \"reasons\": []}}\nReturn only the JSON object now.\nFOLLOW-UP QUESTIONS: [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\"]\nFULL MARKET AND SESSION DETAIL: {\"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}}\nAnswer again with the same JSON schema and only that JSON.\nFOLLOW-UP QUESTIONS: [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\"]\nFULL MARKET AND SESSION DETAIL: {\"market\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"live_orderbook\": true, \"pairs\": {\"BTC/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 81211.6, \"ema50\": 81299.749823, \"ema200\": 81422.205427, \"ema50_slope\": -0.017769, \"dist_to_high20_pct\": -0.174792, \"dist_to_low20_pct\": 0.021923, \"atr_pct_14\": 0.036835, \"volume_z_48\": 0.833595, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81444.338883, \"ema200\": 81570.805252, \"ema50_slope\": -0.045119, \"dist_to_high20_pct\": -0.360498, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.090161, \"volume_z_48\": 0.648949, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81541.462704, \"ema200\": 81772.673312, \"ema50_slope\": -0.05873, \"dist_to_high20_pct\": -0.437776, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.111283, \"volume_z_48\": 2.444656, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 81259.8, \"ema50\": 81751.246152, \"ema200\": 82523.862107, \"ema50_slope\": -0.084867, \"dist_to_high20_pct\": -0.684431, \"dist_to_low20_pct\": 0.080424, \"atr_pct_14\": 0.187845, \"volume_z_48\": 0.113134, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 81353.7, \"ema50\": 82555.051337, \"ema200\": 82025.078701, \"ema50_slope\": -0.264924, \"dist_to_high20_pct\": -3.308747, \"dist_to_low20_pct\": 1.950825, \"atr_pct_14\": 0.975915, \"volume_z_48\": -0.758354, \"regime\": \"range\"}, \"1d\": {\"available\": true, \"close\": 81614.0, \"ema50\": 80422.544105, \"ema200\": 75789.222006, \"ema50_slope\": 0.46295, \"dist_to_high20_pct\": -6.466353, \"dist_to_low20_pct\": 2.277028, \"atr_pct_14\": 2.588649, \"volume_z_48\": 1.496859, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000123, \"bid_depth_1pct_usdt\": 273292.62, \"ask_depth_1pct_usdt\": 254254.02}}, \"ETH/USDT\": {\"timeframes\": {\"1m\": {\"available\": true, \"close\": 2403.99, \"ema50\": 2407.19705, \"ema200\": 2416.058758, \"ema50_slope\": -0.034454, \"dist_to_high20_pct\": -0.215426, \"dist_to_low20_pct\": 0.21051, \"atr_pct_14\": 0.076777, \"volume_z_48\": 1.496624, \"regime\": \"bear\"}, \"5m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2417.923096, \"ema200\": 2426.655258, \"ema50_slope\": -0.112064, \"dist_to_high20_pct\": -0.670975, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.180761, \"volume_z_48\": 2.466258, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2425.203382, \"ema200\": 2432.72357, \"ema50_slope\": -0.152121, \"dist_to_high20_pct\": -1.307487, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.260862, \"volume_z_48\": 2.715286, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 2404.12, \"ema50\": 2431.861753, \"ema200\": 2481.303458, \"ema50_slope\": -0.123404, \"dist_to_high20_pct\": -1.5528, \"dist_to_low20_pct\": 0.215929, \"atr_pct_14\": 0.385647, \"volume_z_48\": 0.162041, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 2410.57, \"ema50\": 2481.892907, \"ema200\": 2537.568273, \"ema50_slope\": -0.494411, \"dist_to_high20_pct\": -4.741638, \"dist_to_low20_pct\": 3.993529, \"atr_pct_14\": 1.486104, \"volume_z_48\": -0.669576, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 2423.45, \"ema50\": 2493.092743, \"ema200\": 2311.156549, \"ema50_slope\": -0.419651, \"dist_to_high20_pct\": -12.769059, \"dist_to_low20_pct\": 4.54918, \"atr_pct_14\": 3.860936, \"volume_z_48\": 0.194197, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.000416, \"bid_depth_1pct_usdt\": 319498.97, \"ask_depth_1pct_usdt\": 115279.96}}, \"SOL/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 103.19, \"ema50\": 103.895263, \"ema200\": 104.407122, \"ema50_slope\": -0.12491, \"dist_to_high20_pct\": -0.902718, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.220121, \"volume_z_48\": 1.129535, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.317046, \"ema200\": 104.806904, \"ema50_slope\": -0.170314, \"dist_to_high20_pct\": -1.423386, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.335719, \"volume_z_48\": 0.608609, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 103.19, \"ema50\": 104.760748, \"ema200\": 107.689433, \"ema50_slope\": -0.202058, \"dist_to_high20_pct\": -1.985182, \"dist_to_low20_pct\": 0.135856, \"atr_pct_14\": 0.491465, \"volume_z_48\": -0.327033, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 103.63, \"ema50\": 107.699506, \"ema200\": 109.971026, \"ema50_slope\": -0.642192, \"dist_to_high20_pct\": -4.646669, \"dist_to_low20_pct\": 2.960755, \"atr_pct_14\": 1.639762, \"volume_z_48\": -0.877649, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 104.44, \"ema50\": 107.144546, \"ema200\": 97.696791, \"ema50_slope\": -0.374854, \"dist_to_high20_pct\": -16.421255, \"dist_to_low20_pct\": 3.765524, \"atr_pct_14\": 4.626033, \"volume_z_48\": -0.78394, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.009703, \"bid_depth_1pct_usdt\": 1155789.22, \"ask_depth_1pct_usdt\": 1282628.57}}, \"BNB/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 713.58, \"ema50\": 717.820171, \"ema200\": 720.68631, \"ema50_slope\": -0.110239, \"dist_to_high20_pct\": -0.965942, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.105004, \"volume_z_48\": 0.645973, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 713.58, \"ema50\": 719.982802, \"ema200\": 724.453669, \"ema50_slope\": -0.164764, \"dist_to_high20_pct\": -1.302905, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.196794, \"volume_z_48\": 1.324046, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 713.58, \"ema50\": 724.173834, \"ema200\": 737.804307, \"ema50_slope\": -0.195752, \"dist_to_high20_pct\": -1.343841, \"dist_to_low20_pct\": 0.13893, \"atr_pct_14\": 0.291388, \"volume_z_48\": 1.562553, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 714.89, \"ema50\": 737.67403, \"ema200\": 745.338107, \"ema50_slope\": -0.51758, \"dist_to_high20_pct\": -4.312618, \"dist_to_low20_pct\": 0.816528, \"atr_pct_14\": 0.914526, \"volume_z_48\": 0.128448, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 721.42, \"ema50\": 733.474069, \"ema200\": 686.376907, \"ema50_slope\": -0.078062, \"dist_to_high20_pct\": -10.957788, \"dist_to_low20_pct\": 1.737414, \"atr_pct_14\": 3.11271, \"volume_z_48\": -1.071609, \"regime\": \"bull\"}}, \"orderbook\": {\"spread_pct\": 0.001402, \"bid_depth_1pct_usdt\": 40152.05, \"ask_depth_1pct_usdt\": 260561.25}}, \"XRP/USDT\": {\"timeframes\": {\"1m\": {\"available\": false}, \"5m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.296913, \"ema200\": 1.304226, \"ema50_slope\": -0.093424, \"dist_to_high20_pct\": -0.638707, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.207448, \"volume_z_48\": 0.28667, \"regime\": \"bear\"}, \"15m\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.302244, \"ema200\": 1.316492, \"ema50_slope\": -0.165724, \"dist_to_high20_pct\": -1.254206, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.311449, \"volume_z_48\": 0.356944, \"regime\": \"bear\"}, \"1h\": {\"available\": true, \"close\": 1.2912, \"ema50\": 1.315812, \"ema200\": 1.359737, \"ema50_slope\": -0.329284, \"dist_to_high20_pct\": -1.645338, \"dist_to_low20_pct\": 0.256231, \"atr_pct_14\": 0.470769, \"volume_z_48\": -0.276172, \"regime\": \"bear\"}, \"4h\": {\"available\": true, \"close\": 1.293, \"ema50\": 1.359856, \"ema200\": 1.406825, \"ema50_slope\": -0.876591, \"dist_to_high20_pct\": -6.757049, \"dist_to_low20_pct\": 0.708778, \"atr_pct_14\": 1.556734, \"volume_z_48\": -0.683451, \"regime\": \"bear\"}, \"1d\": {\"available\": true, \"close\": 1.3114, \"ema50\": 1.387877, \"ema200\": 1.377908, \"ema50_slope\": -0.813771, \"dist_to_high20_pct\": -15.984368, \"dist_to_low20_pct\": 2.141911, \"atr_pct_14\": 4.242467, \"volume_z_48\": -0.737107, \"regime\": \"range\"}}, \"orderbook\": {\"spread_pct\": 0.007747, \"bid_depth_1pct_usdt\": 564342.94, \"ask_depth_1pct_usdt\": 740602.75}}}}, \"session\": {\"asof\": \"2026-10-17T17:02:19.840277+00:00\", \"current_weekday\": \"Saturday\", \"current_session\": [\"ny\"], \"pairs\": {\"BTC/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.014947, \"mean_abs_return\": 0.293573, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.006694, \"mean_abs_return\": 0.247022, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.005311, \"mean_abs_return\": 0.276135, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.030304, \"mean_abs_return\": 0.26582, \"n\": 312}, \"Friday\": {\"mean_return\": 0.013424, \"mean_abs_return\": 0.286454, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.002372, \"mean_abs_return\": 0.106514, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.020826, \"mean_abs_return\": 0.152981, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.00528, \"mean_abs_return\": 0.209207, \"n\": 720}, \"london\": {\"mean_return\": 0.022433, \"mean_abs_return\": 0.288983, \"n\": 810}, \"ny\": {\"mean_return\": 0.01614, \"mean_abs_return\": 0.26852, \"n\": 718}}}, \"ETH/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.005074, \"mean_abs_return\": 0.351853, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.012284, \"mean_abs_return\": 0.309298, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.031775, \"mean_abs_return\": 0.383402, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.012481, \"mean_abs_return\": 0.348716, \"n\": 312}, \"Friday\": {\"mean_return\": 0.026002, \"mean_abs_return\": 0.345957, \"n\": 312}, \"Saturday\": {\"mean_return\": -0.000365, \"mean_abs_return\": 0.150247, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.02983, \"mean_abs_return\": 0.250223, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.005435, \"mean_abs_return\": 0.259314, \"n\": 720}, \"london\": {\"mean_return\": 0.011767, \"mean_abs_return\": 0.356453, \"n\": 810}, \"ny\": {\"mean_return\": 0.028588, \"mean_abs_return\": 0.363143, \"n\": 718}}}, \"SOL/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.013814, \"mean_abs_return\": 0.406437, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.026932, \"mean_abs_return\": 0.38265, \"n\": 312}, \"Wednesday\": {\"mean_return\": 0.019158, \"mean_abs_return\": 0.423082, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.025632, \"mean_abs_return\": 0.425285, \"n\": 312}, \"Friday\": {\"mean_return\": 0.042613, \"mean_abs_return\": 0.427817, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.011158, \"mean_abs_return\": 0.268493, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.027148, \"mean_abs_return\": 0.342434, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.01069, \"mean_abs_return\": 0.359632, \"n\": 720}, \"london\": {\"mean_return\": 0.016317, \"mean_abs_return\": 0.417813, \"n\": 810}, \"ny\": {\"mean_return\": 0.025616, \"mean_abs_return\": 0.426639, \"n\": 718}}}, \"BNB/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": -0.012268, \"mean_abs_return\": 0.26812, \"n\": 312}, \"Tuesday\": {\"mean_return\": 0.003142, \"mean_abs_return\": 0.240713, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.001488, \"mean_abs_return\": 0.292295, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.029892, \"mean_abs_return\": 0.283117, \"n\": 312}, \"Friday\": {\"mean_return\": 0.015691, \"mean_abs_return\": 0.272419, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.031738, \"mean_abs_return\": 0.237772, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.013606, \"mean_abs_return\": 0.216036, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.007781, \"mean_abs_return\": 0.256245, \"n\": 720}, \"london\": {\"mean_return\": 0.015467, \"mean_abs_return\": 0.294563, \"n\": 810}, \"ny\": {\"mean_return\": 0.008536, \"mean_abs_return\": 0.276238, \"n\": 718}}}, \"XRP/USDT\": {\"available\": true, \"weekday\": {\"Monday\": {\"mean_return\": 0.001311, \"mean_abs_return\": 0.453427, \"n\": 312}, \"Tuesday\": {\"mean_return\": -0.021583, \"mean_abs_return\": 0.43133, \"n\": 312}, \"Wednesday\": {\"mean_return\": -0.017185, \"mean_abs_return\": 0.484314, \"n\": 312}, \"Thursday\": {\"mean_return\": 0.04709, \"mean_abs_return\": 0.488036, \"n\": 312}, \"Friday\": {\"mean_return\": 0.032996, \"mean_abs_return\": 0.49734, \"n\": 312}, \"Saturday\": {\"mean_return\": 0.013572, \"mean_abs_return\": 0.346485, \"n\": 305}, \"Sunday\": {\"mean_return\": 0.017319, \"mean_abs_return\": 0.324495, \"n\": 293}}, \"session\": {\"asia\": {\"mean_return\": 0.026184, \"mean_abs_return\": 0.388768, \"n\": 720}, \"london\": {\"mean_return\": 0.020082, \"mean_abs_return\": 0.483171, \"n\": 810}, \"ny\": {\"mean_return\": -0.00021, \"mean_abs_return\": 0.50257, \"n\": 718}}}}}}\nAnswer again with the same JSON schema and only that JSON."
+  ],
+  "raw": [
+    "{\"pairs\": {\"BTC/USDT\": {\"action\": \"allow\", \"size\": 0.4, \"confidence\": 0.55, \"rationale\": \"Only pair with positive daily EMA50 slope and price above daily EMA50/200 plus deep liquid book, but 1m-1h are bear-aligned and GDELT BTC tone is negative (-0.86), so size is reduced.\"}, \"ETH/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.6, \"rationale\": \"Bear regime across 1m-4h, daily slope negative and price below daily EMA50; no bullish confirmation to justify an entry.\"}, \"SOL/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.65, \"rationale\": \"5m-4h all bear with steep negative slopes and negative daily slope; price pinned just above 20-bar lows indicates continuation risk.\"}, \"BNB/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.7, \"rationale\": \"Bear across 5m-4h and extremely ask-heavy book (bid depth 40k vs ask 260k) signals weak support and poor entry liquidity.\"}, \"XRP/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.7, \"rationale\": \"Daily regime range with strongly negative slope, bearish 5m-4h alignment, and ask-heavy liquidity; breakdown risk outweighs upside.\"}}, \"followups\": [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\"]}\n",
+    "{\"pairs\": {\"BTC/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.72, \"rationale\": \"1m-4h all bear, price below EMA50/200 with negative slopes; entry direction unconfirmed and likely against intraday momentum.\"}, \"ETH/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.75, \"rationale\": \"1m-4h bear with steepening negative slopes and -12.8% from 20d high; unfavorable for longs, no confirmed reversal signal.\"}, \"SOL/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.75, \"rationale\": \"5m-4h bear, 1m data unavailable, negative slopes and weak volume_z; insufficient confirmation to allow.\"}, \"BNB/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.7, \"rationale\": \"Intraday bear aligned across TFs, thin bid depth (40k vs 260k ask) signals sell-side pressure; 1m missing.\"}, \"XRP/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.68, \"rationale\": \"5m-4h bear, -16% from 20d high, wide spread and 1m unavailable; 1d range offers no edge intraday.\"}}, \"followups\": [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\"]}\n",
+    "{\"pairs\": {\"BTC/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.6, \"rationale\": \"All sub-daily timeframes bearish (price below EMA50<EMA200, negative slopes) with a 15m volume_z=2.44 selloff; only the 1d is bull. Proposed entry direction/trigger is unspecified, so risk cannot be assessed.\"}, \"ETH/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.66, \"rationale\": \"1m-4h all bear with EMA50<EMA200 and negative slopes; 1d 'bull' has a negative EMA50 slope. Spread 0.42% with ask-side depth ~115k vs bid ~319k. Direction unknown.\"}, \"SOL/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.76, \"rationale\": \"Bearish across every available timeframe (4h slope -0.64), and 1m data is unavailable. Spread 0.97% is very wide, indicating poor liquidity; fresh entries risk slippage.\"}, \"BNB/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.72, \"rationale\": \"Bearish across all available timeframes with 1m data missing. Order book is badly skewed/thin: bid depth ~40k vs ask depth ~261k, so entries are exposed to adverse fills.\"}, \"XRP/USDT\": {\"action\": \"block\", \"size\": 0.0, \"confidence\": 0.7, \"rationale\": \"Bearish on all available timeframes (4h slope -0.88), 1m data unavailable, and spread 0.77% is wide. Direction/trigger of the proposed entries is unspecified.\"}}, \"followups\": [\"What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?\", \"Are there open or pending orders for these pairs that affect net exposure?\", \"Why are 1m candles missing for SOL, BNB and XRP, and are the unusually wide spreads (SOL 0.97%, XRP 0.77%) and thin BNB bid depth expected?\"]}\n"
+  ],
+  "model": "opencode/deepseek-v4.1-flash-free",
+  "decision": {
+    "source": "llm",
+    "followups": [
+      "What is the intended direction and trigger of the proposed entries (momentum continuation vs mean-reversion)?",
+      "Are there open or pending orders for these pairs that affect net exposure?",
+      "Why are 1m candles missing for SOL, BNB and XRP, and are the unusually wide spreads (SOL 0.97%, XRP 0.77%) and thin BNB bid depth expected?"
+    ],
+    "pairs": {
+      "BTC/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.6,
+        "rationale": "All sub-daily timeframes bearish (price below EMA50<EMA200, negative slopes) with a 15m volume_z=2.44 selloff; only the 1d is bull. Proposed entry direction/trigger is unspecified, so risk cannot be assessed."
+      },
+      "ETH/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.66,
+        "rationale": "1m-4h all bear with EMA50<EMA200 and negative slopes; 1d 'bull' has a negative EMA50 slope. Spread 0.42% with ask-side depth ~115k vs bid ~319k. Direction unknown."
+      },
+      "SOL/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.76,
+        "rationale": "Bearish across every available timeframe (4h slope -0.64), and 1m data is unavailable. Spread 0.97% is very wide, indicating poor liquidity; fresh entries risk slippage."
+      },
+      "BNB/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.72,
+        "rationale": "Bearish across all available timeframes with 1m data missing. Order book is badly skewed/thin: bid depth ~40k vs ask depth ~261k, so entries are exposed to adverse fills."
+      },
+      "XRP/USDT": {
+        "action": "block",
+        "size": 0.0,
+        "confidence": 0.7,
+        "rationale": "Bearish on all available timeframes (4h slope -0.88), 1m data unavailable, and spread 0.77% is wide. Direction/trigger of the proposed entries is unspecified."
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+"""Shared configuration for the research harness.
+
+The guardrails live here. Every number that decides whether a strategy is
+allowed to promote is explicit, so a reader can audit the whole thing.
+"""
+from datetime import datetime, timezone
+
+# --- market ---------------------------------------------------------------
+EXCHANGE = "bybit"
+ASSETS = ["BTC", "ETH", "SOL", "BNB", "XRP"]
+TIMEFRAMES = ["1d", "4h"]
+
+# --- costs (Bybit spot standard tier) -------------------------------------
+FEE_PER_SIDE = 0.001        # taker fee
+SLIPPAGE_PER_SIDE = 0.0002  # small retail order allowance
+COST_PER_SIDE = FEE_PER_SIDE + SLIPPAGE_PER_SIDE
+
+# --- periods --------------------------------------------------------------
+PERIODS_PER_YEAR = {"1d": 365, "4h": 6 * 365, "1h": 24 * 365, "15m": 96 * 365}
+
+# Train window ends here. Candidates are SELECTED using data up to this date.
+TRAIN_END = "2024-12-31"
+# Holdout window starts here. The search NEVER sees this data.
+# It exists only to give a final verdict on survivors.
+HOLDOUT_START = "2025-01-01"
+
+# --- promotion rules ------------------------------------------------------
+# A challenger must clear ALL of these to even be considered.
+MIN_TRAIN_CAGR_PCT = 5.0          # must actually make money on train
+MIN_HOLDOUT_CAGR_PCT = 0.0        # must not lose money on the untouched window
+MIN_ASSET_CONSISTENCY = 3        # must work on at least N of the assets
+MAX_DEFLATED_SHARPE_TRIALS = 200  # multiple-testing correction budget
+MIN_DEFLATED_SHARPE = 0.95        # DSR confidence level required
+
+# A challenger must ALSO beat the current champion by this margin on holdout.
+MIN_IMPROVEMENT_OVER_CHAMPION_PCT = 2.0
+
+# --- paths ----------------------------------------------------------------
+import os
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(PROJECT_ROOT, "research", "data")
+REPORT_DIR = os.path.join(PROJECT_ROOT, "research", "reports")
+STATE_DIR = os.path.join(PROJECT_ROOT, "research", "state")
+STATE_FILE = os.path.join(STATE_DIR, "champion.json")
+LOG_DIR = os.path.join(PROJECT_ROOT, "research", "logs")
+
+for _d in (DATA_DIR, REPORT_DIR, STATE_DIR, LOG_DIR):
+    os.makedirs(_d, exist_ok=True)
+
+
+def now_iso():
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
