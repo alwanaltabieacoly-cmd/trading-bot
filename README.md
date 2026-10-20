@@ -136,12 +136,26 @@ picks it up automatically.
 
 ---
 
-## GitHub Actions
+## GitHub Actions — the only runner
 
 `.github/workflows/strategy-research.yml` runs the harness **every 4 hours**
-(06:17, 10:17, 14:17, 18:17, 22:17, 02:17 UTC) and commits the report and
+(00:17, 04:17, 08:17, 12:17, 16:17, 20:17 UTC) and commits the report and
 champion state back to the repo. The history of runs is therefore the audit
 trail.
+
+**The project is designed to run entirely from GitHub.** This PC can be
+switched off and nothing is lost:
+
+- Each run starts on a fresh GitHub runner VM, does its work, commits, and
+  the VM is destroyed. Between runs there is nothing running anywhere.
+- The market data cache, the per-candidate history and every past report
+  are committed to the repo, so a cold runner has the full history.
+- Only four packages are needed on the runner: `ccxt`, `pandas`, `numpy`,
+  `pyarrow`. No GPU, no model weights, no local install.
+
+This was verified by cloning the repository into an empty directory,
+building a fresh Python environment with only those four packages, and
+running the full harness from there — it worked end to end.
 
 The repository is **public on purpose**: GitHub Actions minutes are
 unlimited on public repositories, so a 6x/day cadence costs nothing. There
