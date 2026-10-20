@@ -72,6 +72,7 @@ jobs:
           git config user.email "research-bot@users.noreply.github.com"
           git add research/reports research/state research/data
           git add research/history.csv research/deep-report.md research/deep-report.json
+          git add research/evolution.json research/evolution-log.jsonl
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else

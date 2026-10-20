@@ -109,6 +109,47 @@ def donchian_trend_vol_filter(df, period=100, atr_period=14, atr_max_pct=4.0):
     return (trend & (atr_pct < atr_max_pct)).fillna(False)
 
 
+def sma_trend_slope(df, period=200, slope_bars=20):
+    """Hold while close is above its SMA AND the SMA itself is rising.
+
+    Requiring the long-term average to be rising rejects the case where
+    price sits just above a flattening average - the market that chops
+    around a trend and eats fees.
+    """
+    ma = _sma(df["close"], period)
+    s = (df["close"] > ma) & (ma > ma.shift(slope_bars))
+    return np.where(np.isnan(s), False, s)
+
+
+def sma_trend_confirm(df, slow_period=200, fast_period=50):
+    """Hold while close is above the slow SMA AND the fast SMA is above it.
+
+    A slower confirmation than a golden cross: the fast average has to be
+    above the slow one, so the bot buys a trend that has already started
+    rather than the first touch of the average.
+    """
+    slow = _sma(df["close"], slow_period)
+    fast = _sma(df["close"], fast_period)
+    s = (df["close"] > slow) & (fast > slow)
+    return np.where(np.isnan(s), False, s)
+
+
+def sma_trend_efficiency(df, period=200, er_n=30, er_min=0.25):
+    """Hold while close is above its SMA AND the market is trending cleanly.
+
+    Kaufman's efficiency ratio is net movement divided by total movement.
+    A ratio near 1 means price went straight one way; near 0 means it
+    thrashed. This is a different lens from volatility: a market can be
+    quiet but directionless, or volatile but cleanly trending.
+    """
+    ma = _sma(df["close"], period)
+    net = (df["close"] - df["close"].shift(er_n)).abs()
+    path = df["close"].diff().abs().rolling(er_n).sum()
+    er = net / path.replace(0, np.nan)
+    s = (df["close"] > ma) & (er > er_min)
+    return np.where(np.isnan(s), False, s)
+
+
 # --------------------------------------------------------------------------
 # registry
 # --------------------------------------------------------------------------
@@ -181,20 +222,106 @@ REGISTRY = [
         },
         donchian_trend_vol_filter,
     ),
+    # --- newer ideas, added because the evidence pointed at the trend
+    # --- families being the strongest. These are new CONDITIONS, not
+    # --- finer versions of an existing grid.
+    (
+        "sma_trend_slope",
+        "close > SMA(n) and the SMA is rising",
+        {"period": [100, 150, 200, 250], "slope_bars": [10, 20, 40]},
+        sma_trend_slope,
+    ),
+    (
+        "sma_trend_confirm",
+        "close > SMA(slow) and SMA(fast) above SMA(slow)",
+        {"slow_period": [100, 150, 200, 250], "fast_period": [20, 50]},
+        sma_trend_confirm,
+    ),
+    (
+        "sma_trend_efficiency",
+        "close > SMA(n) and efficiency ratio above a floor",
+        {
+            "period": [100, 150, 200, 250],
+            "er_n": [20, 30],
+            "er_min": [0.2, 0.3],
+        },
+        sma_trend_efficiency,
+    ),
 ]
+
+
+def retired_families():
+    """Families the evolution step has retired based on accumulated evidence.
+
+    A retired family is one whose every variant lost money on the untouched
+    window across several separated runs. Removing it stops the harness
+    burning trials on a rule that is known to be harmful.
+    """
+    import json
+    import os
+
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "research", "evolution.json")
+    if not os.path.exists(path):
+        return set()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return set(data.get("retired_families", []) or [])
+    except Exception:
+        return set()
+
+
+def champion_anchor():
+    """The champion's own parameter set, so it is always still evaluable.
+
+    Retirement must never delete the strategy we are currently using -
+    otherwise we could no longer measure whether the current champion still
+    wins.
+    """
+    import json
+    import os
+
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "research", "state", "champion.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            state = json.load(f)
+        champ = state.get("champion") or {}
+        return champ.get("id"), champ.get("params") or {}
+    except Exception:
+        return None
 
 
 def expand():
     """Yield (candidate_id, params, fn, family, desc) for every combination."""
     import itertools
 
+    retired = retired_families()
+    anchor = champion_anchor()
+
     out = []
     for sid, desc, grid, fn in REGISTRY:
+        if sid in retired:
+            continue
         keys = list(grid.keys())
         for combo in itertools.product(*[grid[k] for k in keys]):
             params = dict(zip(keys, combo))
             cid = sid + "_" + "_".join(f"{k}{v}" for k, v in params.items())
             out.append((cid, params, fn, sid, desc))
+
+    # Guarantee the champion is always in the space, even if its family was
+    # retired or its parameters drifted outside the current grid.
+    if anchor:
+        anchor_id, anchor_params = anchor
+        if anchor_id and not any(c[0] == anchor_id for c in out):
+            for sid, desc, grid, fn in REGISTRY:
+                if anchor_id.startswith(sid + "_"):
+                    out.append((anchor_id, anchor_params, fn, sid, desc))
+                    break
+
     return out
 
 

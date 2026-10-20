@@ -173,10 +173,10 @@ def main(argv=None):
 
     # 1. data
     if not skip_fetch:
-        print("\n[1/5] fetching market data")
+        print("\n[1/6] fetching market data")
         data.update_all()
     else:
-        print("\n[1/5] using cached data (--no-fetch)")
+        print("\n[1/6] using cached data (--no-fetch)")
 
     frames = []
     for a in config.ASSETS:
@@ -191,10 +191,23 @@ def main(argv=None):
         return 2
     print(f"  loaded {len(frames)} asset/timeframe series")
 
-    # 2. expand candidates
+    # 2. evolve: let the accumulated evidence shape this run's search space
+    from . import evolve
+
+    print("\n[2/6] evolving the search space from accumulated evidence")
+    ev_df = evolve.load_history()
+    ev_state = evolve.load_state()
+    ev_decision = evolve.decide(ev_df, ev_state)
+    ev_saved = evolve.apply(ev_decision, ev_state)
+    retired = ev_saved.get("retired_families", [])
+    for r in ev_decision.get("reasons", []):
+        print(f"  {r}")
+    print(f"  retired families: {retired or 'none'}")
+
+    # 3. expand candidates
     train_end, holdout_start = config.split_dates()
     candidates = strategies.expand()
-    print(f"\n[2/5] evaluating {len(candidates)} candidates on the TRAIN window")
+    print(f"\n[3/6] evaluating {len(candidates)} candidates on the TRAIN window")
     print(f"        train ends {train_end}, holdout starts {holdout_start} "
           f"(rolling {config.HOLDOUT_DAYS}-day holdout)")
 
@@ -211,7 +224,7 @@ def main(argv=None):
     print(f"  {n_trials} candidates evaluated")
 
     # 3. apply the deflated Sharpe correction for how many things we tried
-    print("\n[3/5] applying Deflated Sharpe correction "
+    print("\n[4/6] applying Deflated Sharpe correction "
           f"(n_trials={n_trials})")
     for r in results:
         # Headline DSR: computed on the POOLED equal-weight daily portfolio
@@ -277,10 +290,10 @@ def main(argv=None):
             champ["last_evaluated"] = config.now_iso()
         else:
             champ_hold = champ.get("holdout_cagr")
-        print(f"\n[4/5] current champion: {champ.get('id')} "
+        print(f"\n[5/6] current champion: {champ.get('id')} "
               f"(holdout CAGR {champ_hold:.1f}% on the current window)")
     else:
-        print("\n[4/5] no champion yet")
+        print("\n[5/6] no champion yet")
 
     best = survivors[0] if survivors else None
     promoted = False
@@ -335,7 +348,7 @@ def main(argv=None):
         print("  no candidate cleared the promotion rules")
 
     # 5. report
-    print("\n[5/5] writing report")
+    print("\n[6/6] writing report")
     results_sorted = sorted(results, key=lambda r: r["holdout_cagr"], reverse=True)
     report = {
         "run_at": config.now_iso(),
@@ -356,6 +369,12 @@ def main(argv=None):
         },
         "champion": state.get("champion"),
         "n_candidates": n_trials,
+        "evolution": {
+            "retired_families": retired,
+            "reasons": ev_decision.get("reasons", []),
+            "explore_next": ev_decision.get("explore_next", [])[:5],
+            "n_runs_of_evidence": ev_decision.get("n_runs", 0),
+        },
         "n_basic": len(basic),
         "n_survivors": len(survivors),
         "challenger_proposed": promoted,
@@ -558,6 +577,13 @@ def render_markdown(report, results):
     lines.append("")
     lines.append("## Notes")
     lines.append("")
+    ev = report.get("evolution") or {}
+    if ev.get("retired_families"):
+        lines.append(f"- **Retired this run:** {', '.join('`'+f+'`' for f in ev['retired_families'])} "
+                     "- families whose every variant lost money on the untouched window.")
+    if ev.get("explore_next"):
+        lines.append("- **Families flagged for more exploration:** "
+                     + ", ".join(f"`{e['family']}`" for e in ev["explore_next"]))
     lines.append("- The holdout window is never used to select between candidates.")
     lines.append("- The Deflated Sharpe correction accounts for how many candidates "
                  "were tried, so a lucky winner cannot pass by chance.")
