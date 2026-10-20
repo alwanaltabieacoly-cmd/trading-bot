@@ -162,14 +162,45 @@ def eval_candidate(cid, params, fn, frames, train_end, holdout_start):
 # --------------------------------------------------------------------------
 
 
+EXIT_SKIPPED = 10
+
+
 def main(argv=None):
     argv = argv or sys.argv[1:]
     skip_fetch = "--no-fetch" in argv
+
+    min_interval_hours = 0.0
+    for a in argv:
+        if a.startswith("--min-interval-hours="):
+            min_interval_hours = float(a.split("=", 1)[1])
 
     t_start = time.time()
     print("=" * 78)
     print(f"DAILY RESEARCH RUN - {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
     print("=" * 78)
+
+    # 0. gate
+    #
+    # GitHub's scheduler is best-effort: a scheduled run can be delayed by
+    # an hour or skipped entirely. So the workflow ticks hourly and this
+    # gate decides whether a run is actually due. A missed slot is picked
+    # up by the next tick instead of being lost for four hours.
+    if min_interval_hours > 0:
+        st = load_state()
+        last = st.get("last_run")
+        if last:
+            try:
+                last_dt = datetime.fromisoformat(last)
+                age_h = (datetime.now(timezone.utc) - last_dt).total_seconds() / 3600.0
+            except Exception:
+                age_h = 999.0
+            if age_h < min_interval_hours:
+                print(f"\n[0/6] skipping: last run was {age_h:.2f}h ago, "
+                      f"minimum interval is {min_interval_hours}h")
+                print("       (the next hourly tick will pick this up if needed)")
+                return EXIT_SKIPPED
+            print(f"\n[0/6] due: last run was {age_h:.2f}h ago "
+                  f"(minimum {min_interval_hours}h)")
 
     # 1. data
     if not skip_fetch:

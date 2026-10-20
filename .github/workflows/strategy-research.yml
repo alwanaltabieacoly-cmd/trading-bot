@@ -12,10 +12,14 @@ name: Strategy research
 
 on:
   schedule:
-    # Every 4 hours, on an off-round minute so the job does not sit in
-    # GitHub's cron pile-up. That is 06:17, 10:17, 14:17, 18:17, 22:17,
-    # 02:17 UTC.
-    - cron: "17 */4 * * *"
+    # Tick every hour, and let the job itself decide whether a research run
+    # is actually due (see --min-interval-hours below).
+    #
+    # GitHub's scheduler is best-effort: a cron slot can be delayed by an
+    # hour or skipped outright. Ticking hourly means a missed run is picked
+    # up on the next tick instead of being lost for four hours. The gate
+    # keeps the actual research cadence at one run every 4 hours.
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -54,19 +58,30 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
+          set +e
           if [ "${{ inputs.skip_fetch }}" = "true" ]; then
             python -m research.run_daily --no-fetch
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            python -m research.run_daily --min-interval-hours=3.5
           else
             python -m research.run_daily
           fi
+          code=$?
+          if [ $code -eq 10 ]; then
+            echo "::notice::Research not due yet - skipped without doing work"
+            echo "SKIPPED_NOT_DUE=1" >> $GITHUB_ENV
+          fi
+          exit 0
 
       - name: Deep analysis across all runs
+        if: env.SKIPPED_NOT_DUE != '1'
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
           python -m research.analyze
 
       - name: Commit report and state
+        if: env.SKIPPED_NOT_DUE != '1'
         run: |
           git config user.name "research-bot"
           git config user.email "research-bot@users.noreply.github.com"
