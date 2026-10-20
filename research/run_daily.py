@@ -199,9 +199,10 @@ def main(argv=None):
           f"(rolling {config.HOLDOUT_DAYS}-day holdout)")
 
     results = []
-    for i, (cid, params, fn, desc) in enumerate(candidates):
+    for i, (cid, params, fn, family, desc) in enumerate(candidates):
         r = eval_candidate(cid, params, fn, frames, train_end, holdout_start)
         if r and "error" not in r:
+            r["family"] = family
             results.append(r)
         if (i + 1) % 25 == 0:
             print(f"        {i + 1}/{len(candidates)}", flush=True)
@@ -432,6 +433,12 @@ def main(argv=None):
     }])[-400:]
     save_state(state)
 
+    # Per-candidate history. This is what turns a pile of isolated runs into
+    # evidence: a strategy that is good in one window is a fluke, a strategy
+    # that is good in every window is a candidate for the champion.
+    write_history(results, run_at=config.now_iso(), train_end=train_end,
+                  holdout_start=holdout_start)
+
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2)
     with open(md_path, "w", encoding="utf-8") as f:
@@ -441,6 +448,48 @@ def main(argv=None):
     print(f"        {md_path}")
     print(f"done in {report['duration_sec']}s")
     return 0
+
+
+def write_history(results, run_at, train_end, holdout_start):
+    """Append one row per candidate to research/history.csv.
+
+    Over many runs this becomes the real evidence base: which strategies
+    are good again and again, and which ones only ever looked good once.
+    """
+    import csv
+
+    path = os.path.join(config.PROJECT_ROOT, "research", "history.csv")
+    fields = [
+        "run_at", "candidate_id", "family",
+        "train_cagr", "holdout_cagr", "train_dd", "holdout_dd",
+        "holdout_sharpe", "dsr", "assets_positive", "assets_tested",
+        "passes_basic", "passes_gate",
+        "train_end", "holdout_start",
+    ]
+    exists = os.path.exists(path)
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        if not exists:
+            w.writeheader()
+        for r in results:
+            w.writerow({
+                "run_at": run_at,
+                "candidate_id": r["id"],
+                "family": r.get("family") or r["id"].split("_")[0],
+                "train_cagr": r["train_cagr"],
+                "holdout_cagr": r["holdout_cagr"],
+                "train_dd": r["train_dd"],
+                "holdout_dd": r["holdout_dd"],
+                "holdout_sharpe": r.get("holdout_sharpe"),
+                "dsr": r.get("dsr"),
+                "assets_positive": r["assets_positive"],
+                "assets_tested": r["assets_tested"],
+                "passes_basic": r.get("passes_basic"),
+                "passes_gate": r.get("passes_gate"),
+                "train_end": train_end,
+                "holdout_start": holdout_start,
+            })
+    return path
 
 
 def render_markdown(report, results):

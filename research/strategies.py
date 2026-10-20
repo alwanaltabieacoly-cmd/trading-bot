@@ -119,7 +119,7 @@ REGISTRY = [
     (
         "sma_trend",
         "close > SMA(n), else cash",
-        {"period": [50, 100, 150, 200, 250, 300]},
+        {"period": [50, 100, 125, 150, 175, 200, 225, 250, 275, 300, 400]},
         sma_trend,
     ),
     (
@@ -138,9 +138,9 @@ REGISTRY = [
         "sma_trend_vol_filter",
         "close > SMA(n) and ATR% below limit",
         {
-            "period": [100, 150, 200, 250],
+            "period": [100, 150, 175, 200, 225, 250, 300],
             "vol_lookback": [30],
-            "vol_max_pct": [2.0, 2.5, 3.0, 4.0],
+            "vol_max_pct": [1.5, 2.0, 2.5, 3.0, 4.0],
         },
         sma_trend_vol_filter,
     ),
@@ -185,7 +185,7 @@ REGISTRY = [
 
 
 def expand():
-    """Yield (candidate_id, params, fn) for every combination in the registry."""
+    """Yield (candidate_id, params, fn, family, desc) for every combination."""
     import itertools
 
     out = []
@@ -194,7 +194,7 @@ def expand():
         for combo in itertools.product(*[grid[k] for k in keys]):
             params = dict(zip(keys, combo))
             cid = sid + "_" + "_".join(f"{k}{v}" for k, v in params.items())
-            out.append((cid, params, fn, desc))
+            out.append((cid, params, fn, sid, desc))
     return out
 
 

@@ -60,11 +60,18 @@ jobs:
             python -m research.run_daily
           fi
 
+      - name: Deep analysis across all runs
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python -m research.analyze
+
       - name: Commit report and state
         run: |
           git config user.name "research-bot"
           git config user.email "research-bot@users.noreply.github.com"
           git add research/reports research/state research/data
+          git add research/history.csv research/deep-report.md research/deep-report.json
           if git diff --staged --quiet; then
             echo "nothing to commit"
           else
@@ -91,6 +98,10 @@ jobs:
               print(f"- holdout CAGR: {ch.get('holdout_cagr', 'n/a')}%")
           print("")
           print(f"- cumulative candidates tested: {state.get('cumulative_candidates_tested', 'n/a')}")
-          reports = sorted(glob.glob("research/reports/*.md"))
-          print(f"- reports on file: {len(reports)}")
+          if os.path.exists("research/deep-report.json"):
+              d = json.load(open("research/deep-report.json"))
+              se = d.get("selection_efficiency", {})
+              print(f"- runs analysed: {d.get('n_runs', 'n/a')}")
+              print(f"- selection efficiency (rank corr): {se.get('mean_rank_correlation', 'n/a')}"
+                    f" -> {se.get('verdict', 'n/a')}")
           PY
