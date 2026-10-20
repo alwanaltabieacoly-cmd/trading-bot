@@ -115,7 +115,9 @@ def date_mask(dates, start=None, end=None):
     s = pd.to_datetime(dates, utc=True)
     mask = np.ones(len(s), dtype=bool)
     if start:
-        mask &= (s >= pd.Timestamp(start, tz="UTC")).to_numpy()
+        cmp = s >= pd.Timestamp(start, tz="UTC")
+        mask &= np.asarray(cmp, dtype=bool).reshape(-1)
     if end:
-        mask &= (s < pd.Timestamp(end, tz="UTC")).to_numpy()
-    return mask
+        cmp = s < pd.Timestamp(end, tz="UTC")
+        mask &= np.asarray(cmp, dtype=bool).reshape(-1)
+    return np.asarray(mask, dtype=bool)
