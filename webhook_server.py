@@ -4,7 +4,7 @@
 
 from fastapi import FastAPI, Request, HTTPException, Header
 from pydantic import BaseModel, Field
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import json, hmac, hashlib, os
 
@@ -61,6 +61,22 @@ def _veto_check(symbol, action):
         return False, f"deliberation size=0 for {symbol}"
     return True, f"deliberation allows {symbol} (size={size}, conf={item.get('confidence')})"
 
+
+def _time_gate():
+    """Block new entries if within 15 min of next 4-hour boundary.
+    Returns (allowed, reason)."""
+    now = datetime.now(timezone.utc)
+    # next 4-hour boundary (00,04,08,12,16,20 UTC)
+    hour = (now.hour // 4 + 1) * 4
+    if hour >= 24:
+        nxt = now.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+    else:
+        nxt = now.replace(hour=hour, minute=0, second=0, microsecond=0)
+    mins_left = (nxt - now).total_seconds() / 60.0
+    if mins_left < 15:
+        return False, f"only {mins_left:.0f} min to next 4h run - waiting for fresh decision"
+    return True, f"{mins_left:.0f} min to next 4h run"
+
 # ---------- paper broker ----------
 def _load_state():
     if PAPER_STATE_PATH.exists():
@@ -97,6 +113,14 @@ async def tv_webhook(alert: TVAlert, x_tv_secret: str = Header(default="")):
         allowed, reason = _veto_check(symbol, "buy")
         if not allowed:
             result["reason"] = reason
+            _save_state(state)
+            result["equity"] = state["equity"]
+            result["cash"] = state["cash"]
+            result["positions"] = state["positions"]
+            return result
+        t_allowed, t_reason = _time_gate()
+        if not t_allowed:
+            result["reason"] = t_reason
             _save_state(state)
             result["equity"] = state["equity"]
             result["cash"] = state["cash"]
