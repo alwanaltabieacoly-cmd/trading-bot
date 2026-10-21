@@ -49,7 +49,11 @@ def _veto_check(symbol, action):
     dec = _latest_decision()
     if not dec:
         return False, "no deliberation decision available - fail closed"
-    pairs = dec.get("pairs") or dec.get("decision", {}).get("pairs", {})
+    pairs = dec.get("decision", {}).get("pairs")
+    if not isinstance(pairs, dict):
+        pairs = dec.get("pairs")
+    if not isinstance(pairs, dict):
+        pairs = {}
     item = pairs.get(symbol)
     if not item:
         return False, f"{symbol} not in deliberation - fail closed"
