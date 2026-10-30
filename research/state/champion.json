@@ -4,16 +4,16 @@
     "params": {
       "period": 200
     },
-    "train_cagr": 12.491,
-    "holdout_cagr": 35.941,
+    "train_cagr": 12.572,
+    "holdout_cagr": 35.568,
     "train_dd": -52.175,
     "holdout_dd": -15.246,
-    "dsr": 0.1287,
+    "dsr": 0.1288,
     "assets_positive": 9,
     "promoted_at": "2026-10-19T23:46:19+00:00",
     "status": "initial_backtest_only",
     "note": "Chosen as the starting champion from the first run. Must confirm itself in live paper trading.",
-    "last_evaluated": "2026-10-29T21:12:02+00:00"
+    "last_evaluated": "2026-10-30T01:05:54+00:00"
   },
   "challenger": null,
   "history": [
@@ -466,10 +466,20 @@
       "challenger_proposed": false,
       "train_end": "2026-05-01",
       "holdout_start": "2026-05-02"
+    },
+    {
+      "at": "2026-10-30T01:05:54+00:00",
+      "n_candidates": 124,
+      "n_survivors": 0,
+      "best_id": "sma_trend_period50",
+      "best_holdout_cagr": 35.988,
+      "challenger_proposed": false,
+      "train_end": "2026-05-02",
+      "holdout_start": "2026-05-03"
     }
   ],
   "created": "2026-10-19T23:46:19+00:00",
-  "cumulative_candidates_tested": 5388,
-  "last_run": "2026-10-29T21:12:02+00:00",
-  "last_run_report": "2026-10-29_2112.json"
+  "cumulative_candidates_tested": 5512,
+  "last_run": "2026-10-30T01:05:54+00:00",
+  "last_run_report": "2026-10-30_0105.json"
 }
