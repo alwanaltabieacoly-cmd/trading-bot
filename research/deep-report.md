@@ -1,13 +1,13 @@
 # Deep research report
 
-- Runs analysed: **118**
+- Runs analysed: **119**
 - Candidates per run: ~124
-- Cumulative candidates evaluated: **14,560**
-- Window: 2026-10-20 00:41:09+00:00 -> 2026-11-19 13:16:55+00:00
+- Cumulative candidates evaluated: **14,684**
+- Window: 2026-10-20 00:41:09+00:00 -> 2026-11-19 21:41:22+00:00
 
 ## Is the search actually working?
 
-- Train-vs-holdout rank correlation: **0.2229** (min 0.1681, max 0.4476, over 118 runs)
+- Train-vs-holdout rank correlation: **0.2232** (min 0.1681, max 0.4476, over 119 runs)
 - Verdict: **search is weakly informative**
 
 > A correlation near 0 means the backtest ranking carries no information about future performance - the search is noise. Above 0.3 means the search genuinely finds something.
@@ -16,32 +16,32 @@
 
 | family | mean holdout CAGR | median | mean DD | mean DSR | max DSR | times basic | times gate |
 |---|---|---|---|---|---|---|---|
-| `sma_trend` | 24.4% | 24.1% | -15.9% | 0.139 | 0.202 | 1289 | 0 |
-| `sma_trend_vol_filter` | 18.8% | 18.2% | -9.8% | 0.109 | 0.503 | 3785 | 0 |
-| `sma_trend_efficiency` | 17.4% | 18.0% | -13.3% | 0.219 | 0.411 | 1751 | 0 |
-| `ema_trend` | 13.2% | 14.1% | -14.8% | 0.105 | 0.155 | 699 | 0 |
-| `ema_trend_regime` | 10.8% | 10.5% | -10.7% | 0.050 | 0.130 | 836 | 0 |
-| `sma_trend_fast_slow` | 9.9% | 10.1% | -16.1% | 0.113 | 0.187 | 1288 | 0 |
-| `sma_trend_slope` | 9.4% | 9.5% | -13.6% | 0.094 | 0.151 | 1292 | 0 |
-| `sma_trend_confirm` | 9.0% | 6.9% | -15.8% | 0.086 | 0.143 | 848 | 0 |
-| `donchian_trend_vol_filter` | 2.8% | 2.5% | -2.8% | 0.098 | 0.315 | 241 | 0 |
-| `donchian_trend` | 3.9% | 2.2% | -4.1% | 0.303 | 0.429 | 287 | 0 |
+| `sma_trend` | 24.5% | 24.2% | -15.9% | 0.139 | 0.202 | 1300 | 0 |
+| `sma_trend_vol_filter` | 18.9% | 18.2% | -9.8% | 0.109 | 0.503 | 3815 | 0 |
+| `sma_trend_efficiency` | 17.5% | 18.1% | -13.3% | 0.219 | 0.411 | 1767 | 0 |
+| `ema_trend` | 13.3% | 14.1% | -14.8% | 0.105 | 0.155 | 705 | 0 |
+| `ema_trend_regime` | 10.8% | 10.5% | -10.7% | 0.050 | 0.130 | 843 | 0 |
+| `sma_trend_fast_slow` | 9.9% | 10.1% | -16.1% | 0.113 | 0.187 | 1300 | 0 |
+| `sma_trend_slope` | 9.5% | 9.6% | -13.6% | 0.094 | 0.151 | 1304 | 0 |
+| `sma_trend_confirm` | 9.1% | 6.9% | -15.8% | 0.086 | 0.143 | 856 | 0 |
+| `donchian_trend_vol_filter` | 2.8% | 2.5% | -2.8% | 0.098 | 0.315 | 243 | 0 |
+| `donchian_trend` | 3.9% | 2.2% | -4.1% | 0.303 | 0.429 | 290 | 0 |
 | `sma_trend_rsi_filter` | -5.2% | -5.7% | -16.8% | 0.036 | 0.097 | 3 | 0 |
 
 ## Consistent winners (positive in every run seen)
 
 | strategy | runs | positive | mean holdout | worst holdout | mean DSR | assets+ |
 |---|---|---|---|---|---|---|
-| `sma_trend_period200` | 118 | 118 | 35.1% | 28.1% | 0.129 | 9.0 |
-| `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct4.0` | 118 | 118 | 34.3% | 27.4% | 0.345 | 8.0 |
-| `sma_trend_period50` | 118 | 118 | 34.2% | 23.2% | 0.183 | 9.0 |
-| `sma_trend_period175` | 118 | 118 | 33.0% | 25.7% | 0.101 | 9.0 |
-| `sma_trend_vol_filter_period175_vol_lookback30_vol_max_pct4.0` | 118 | 118 | 32.7% | 25.5% | 0.379 | 8.2 |
-| `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct3.0` | 118 | 118 | 31.8% | 25.0% | 0.087 | 9.0 |
-| `sma_trend_efficiency_period200_er_n30_er_min0.2` | 115 | 115 | 31.0% | 26.2% | 0.137 | 9.0 |
-| `sma_trend_vol_filter_period100_vol_lookback30_vol_max_pct3.0` | 118 | 118 | 30.7% | 24.5% | 0.395 | 9.5 |
-| `sma_trend_period225` | 118 | 118 | 29.2% | 23.1% | 0.126 | 9.0 |
-| `sma_trend_vol_filter_period225_vol_lookback30_vol_max_pct4.0` | 118 | 118 | 28.7% | 22.7% | 0.360 | 8.0 |
+| `sma_trend_period200` | 119 | 119 | 35.2% | 28.1% | 0.129 | 9.0 |
+| `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct4.0` | 119 | 119 | 34.4% | 27.4% | 0.345 | 8.0 |
+| `sma_trend_period50` | 119 | 119 | 34.3% | 23.2% | 0.183 | 9.0 |
+| `sma_trend_period175` | 119 | 119 | 33.0% | 25.7% | 0.101 | 9.0 |
+| `sma_trend_vol_filter_period175_vol_lookback30_vol_max_pct4.0` | 119 | 119 | 32.8% | 25.5% | 0.379 | 8.2 |
+| `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct3.0` | 119 | 119 | 31.8% | 25.0% | 0.087 | 9.0 |
+| `sma_trend_efficiency_period200_er_n30_er_min0.2` | 116 | 116 | 31.1% | 26.2% | 0.137 | 9.0 |
+| `sma_trend_vol_filter_period100_vol_lookback30_vol_max_pct3.0` | 119 | 119 | 30.8% | 24.5% | 0.395 | 9.5 |
+| `sma_trend_period225` | 119 | 119 | 29.3% | 23.1% | 0.126 | 9.0 |
+| `sma_trend_vol_filter_period225_vol_lookback30_vol_max_pct4.0` | 119 | 119 | 28.8% | 22.7% | 0.360 | 8.0 |
 
 ## Repeat overfits
 
@@ -60,13 +60,13 @@
 
 ## What to try next
 
-- KEEP: `sma_trend_period200` was positive in 118/118 runs (mean holdout 35.1%, worst 28.1%, mean DSR 0.129)
-- KEEP: `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct4.0` was positive in 118/118 runs (mean holdout 34.3%, worst 27.4%, mean DSR 0.345)
-- KEEP: `sma_trend_period50` was positive in 118/118 runs (mean holdout 34.2%, worst 23.2%, mean DSR 0.183)
-- KEEP: `sma_trend_period175` was positive in 118/118 runs (mean holdout 33.0%, worst 25.7%, mean DSR 0.101)
-- KEEP: `sma_trend_vol_filter_period175_vol_lookback30_vol_max_pct4.0` was positive in 118/118 runs (mean holdout 32.7%, worst 25.5%, mean DSR 0.379)
-- FAMILY `sma_trend` has the best median holdout CAGR (24.1%) - add more parameters to it
+- KEEP: `sma_trend_period200` was positive in 119/119 runs (mean holdout 35.2%, worst 28.1%, mean DSR 0.129)
+- KEEP: `sma_trend_vol_filter_period200_vol_lookback30_vol_max_pct4.0` was positive in 119/119 runs (mean holdout 34.4%, worst 27.4%, mean DSR 0.345)
+- KEEP: `sma_trend_period50` was positive in 119/119 runs (mean holdout 34.3%, worst 23.2%, mean DSR 0.183)
+- KEEP: `sma_trend_period175` was positive in 119/119 runs (mean holdout 33.0%, worst 25.7%, mean DSR 0.101)
+- KEEP: `sma_trend_vol_filter_period175_vol_lookback30_vol_max_pct4.0` was positive in 119/119 runs (mean holdout 32.8%, worst 25.5%, mean DSR 0.379)
+- FAMILY `sma_trend` has the best median holdout CAGR (24.2%) - add more parameters to it
 - FAMILY `sma_trend_vol_filter` has the best median holdout CAGR (18.2%) - add more parameters to it
-- FAMILY `sma_trend_efficiency` has the best median holdout CAGR (18.0%) - add more parameters to it
+- FAMILY `sma_trend_efficiency` has the best median holdout CAGR (18.1%) - add more parameters to it
 - FAMILY `ema_trend` has the best median holdout CAGR (14.1%) - add more parameters to it
 
